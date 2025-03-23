@@ -1,7 +1,41 @@
 ﻿@page "/"
+@using Portfolio.Components
+@inject IJSRuntime JSRuntime
 
-<PageTitle>Home</PageTitle>
+<div class="hero min-h-screen" id="home">
+    <div class="hero-content text-center">
+        <div class="max-w-lg">
+            <h1 class="text-5xl font-bold animate__animated animate__fadeInDown">Hello, I'm <span
+                    class="text-primary">Your Name</span></h1>
+            <p class="py-6 animate__animated animate__fadeInUp">Software Developer specializing in .NET and Blazor
+                applications</p>
+            <button class="btn btn-primary animate__animated animate__fadeInUp" @onclick="ScrollToProjects">View My
+                Work</button>
+        </div>
+    </div>
+</div>
 
-<h1>Hello, world!</h1>
+<AboutSection />
+<ProjectsSection />
+<SkillsSection />
+<ContactSection />
 
-Welcome to your new app.
+@code
+{
+    private async Task ScrollToProjects()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", "projects");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeAnimations");
+        }
+    }
+}
+
+                   
+               
+               

@@ -1,0 +1,77 @@
+<section id="projects" class="py-10">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-8 text-center" data-aos="fade-up">My Projects</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach (var project in Projects)
+            {
+                    <div class="card bg-base-100 shadow-xl" data-aos="zoom-in">
+                        <figure><img src="@project.ImageUrl" alt="@project.Title" /></figure>
+                        <div class="card-body">
+                            <h3 class="card-title">@project.Title</h3>
+                            <p>@project.Description</p>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                @foreach (var tech in project.Technologies)
+                                {
+                                        <span class="badge badge-primary">@tech</span>
+                                }
+                            </div>
+                            <div class="card-actions justify-end mt-4">
+                                @if (!string.IsNullOrEmpty(project.DemoUrl))
+                                {
+                                        <a href="@project.DemoUrl" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+                                }
+                                @if (!string.IsNullOrEmpty(project.GithubUrl))
+                                {
+                                        <a href="@project.GithubUrl" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+            }
+        </div>
+    </div>
+</section>
+
+@code
+{
+    private List<Project> Projects { get; set; } = new List<Project>
+    {
+        new Project
+        {
+            Title = "Project One",
+            Description = "A responsive web application built with Blazor WebAssembly",
+            ImageUrl = "images/project1.jpg",
+            Technologies = new List<string> { "C#", "Blazor", ".NET 9", "CSS" },
+            GithubUrl = "https://github.com/yourusername/project1",
+            DemoUrl = "https://demo-url.com/project1"
+        },
+        new Project
+        {
+            Title = "Project Two",
+            Description = "An e-commerce platform with modern design",
+            ImageUrl = "images/project2.jpg",
+            Technologies = new List<string> { "Blazor", "EF Core", "SQL Server", "Bootstrap" },
+            GithubUrl = "https://github.com/yourusername/project2"
+        },
+        new Project
+        {
+            Title = "Project Three",
+            Description = "A real-time communication application",
+            ImageUrl = "images/project3.jpg",
+            Technologies = new List<string> { "SignalR", "Blazor", "JavaScript", "Azure" },
+            GithubUrl = "https://github.com/yourusername/project3",
+            DemoUrl = "https://demo-url.com/project3"
+        }
+    };
+
+    public class Project
+    {
+        public string Title { get; set; } = "";
+        public string Description { get; set; } = "";
+        public string ImageUrl { get; set; } = "";
+        public List<string> Technologies { get; set; } = new();
+        public string GithubUrl { get; set; } = "";
+        public string DemoUrl { get; set; } = "";
+    }
+}

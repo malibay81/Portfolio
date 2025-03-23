@@ -1,0 +1,56 @@
+@inherits LayoutComponentBase
+@inject IJSRuntime JSRuntime
+
+<div class="page">
+    <div class="navbar bg-base-100 fixed top-0 z-50 shadow-md">
+        <div class="container mx-auto">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a @onclick='() => ScrollToSection("home")'>Home</a></li>
+                        <li><a @onclick='() => ScrollToSection("about")'>About</a></li>
+                        <li><a @onclick='() => ScrollToSection("projects")'>Projects</a></li>
+                        <li><a @onclick='() => ScrollToSection("skills")'>Skills</a></li>
+                        <li><a @onclick='() => ScrollToSection("contact")'>Contact</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost normal-case text-xl">Your Name</a>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a @onclick='() => ScrollToSection("home")'>Home</a></li>
+                    <li><a @onclick='() => ScrollToSection("about")'>About</a></li>
+                    <li><a @onclick='() => ScrollToSection("projects")'>Projects</a></li>
+                    <li><a @onclick='() => ScrollToSection("skills")'>Skills</a></li>
+                    <li><a @onclick='() => ScrollToSection("contact")'>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-16">
+        @Body
+    </main>
+
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content">
+        <div>
+            <p>© @DateTime.Now.Year - Your Name - Built with Blazor WebAssembly</p>
+        </div>
+    </footer>
+</div>
+
+@code
+{
+    private async Task ScrollToSection(string sectionId)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", sectionId);
+    }
+}
