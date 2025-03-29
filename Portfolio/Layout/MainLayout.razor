@@ -1,3 +1,69 @@
 ﻿@inherits LayoutComponentBase
 
-@Body
+@inject NavigationManager Navigation
+@inject Microsoft.JSInterop.IJSRuntime JSRuntime
+
+<div class="navbar bg-base-100 shadow-md">
+    <!-- Left: App Icon and Name -->
+    <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 21H3L12 2z" />
+        </svg>
+        <span class="text-xl font-bold">Portfolio</span>
+    </div>
+
+    <!-- Right: Theme Toggle and User Icon -->
+    <div class="ml-auto flex items-center space-x-4">
+        <!-- Theme Toggle Button -->
+        <button class="btn btn-ghost btn-circle" @onclick="ToggleTheme">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.66 4.66l-.71-.71M6.05 6.05l-.71-.71m12.02 12.02l-.71-.71M6.05 17.95l-.71-.71M12 5a7 7 0 100 14 7 7 0 000-14z" />
+            </svg>
+        </button>
+
+        <!-- User Icon -->
+        <button class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5.121 17.804A9 9 0 1118.879 6.196M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="p-4">
+    @Body
+</div>
+
+@code
+{
+    private string CurrentTheme = "light";
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Load theme from localStorage
+        var savedTheme = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "theme");
+        if (!string.IsNullOrEmpty(savedTheme))
+        {
+            CurrentTheme = savedTheme;
+        }
+        ApplyTheme();
+    }
+
+    private async Task ToggleTheme()
+    {
+        CurrentTheme = CurrentTheme == "dark" ? "light" : "dark";
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "theme", CurrentTheme);
+        ApplyTheme();
+    }
+
+    private void ApplyTheme()
+    {
+        JSRuntime.InvokeVoidAsync("eval", $"document.documentElement.setAttribute('data-theme', '{CurrentTheme}');");
+    }
+}

@@ -15,6 +15,10 @@ h6 {
     font-weight: 700;
 }
 
+:root {
+    --appbar-height: 64px;
+}
+
 section {
     padding: 80px 0;
 }
