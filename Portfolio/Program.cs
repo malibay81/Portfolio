@@ -20,6 +20,7 @@ builder.Services.AddMudServices(config =>
     config.SnackbarConfiguration.VisibleStateDuration = 5000;
     config.SnackbarConfiguration.HideTransitionDuration = 500;
     config.SnackbarConfiguration.ShowTransitionDuration = 500;
+    config.PopoverOptions.ThrowOnDuplicateProvider = false;
 });
 
 await builder.Build().RunAsync();

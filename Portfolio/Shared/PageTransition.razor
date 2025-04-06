@@ -1,0 +1,99 @@
+@inject NavigationManager NavigationManager
+@implements IDisposable
+@using Microsoft.AspNetCore.Components.Routing
+
+<div class="@(_isNavigating ? "page-overlay visible" : "page-overlay")">
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+</div>
+
+<style>
+    .page-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--mud-palette-background);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .page-overlay.visible {
+        opacity: 0.95;
+        pointer-events: all;
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border-top-color: var(--mud-palette-primary);
+        animation: spin 1s ease-in-out infinite;
+    }
+
+    @@keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Dark mode support */
+    :root[data-mud-theme="dark"] .spinner {
+        border-color: rgba(255, 255, 255, 0.1);
+        border-top-color: var(--mud-palette-primary);
+    }
+</style>
+
+@code
+{
+    private bool _isNavigating = false;
+    private string _currentUri = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        _currentUri = NavigationManager.Uri;
+        NavigationManager.LocationChanged += HandleLocationChanged;
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= HandleLocationChanged;
+    }
+
+    // Use async void for event handlers
+    private async void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        if (_currentUri != e.Location)
+        {
+            try
+            {
+                _isNavigating = true;
+                StateHasChanged();
+
+                // Short delay to allow the overlay to appear
+                await Task.Delay(50);
+
+                // Give time for the navigation to complete
+                await Task.Delay(300);
+
+                _isNavigating = false;
+                _currentUri = e.Location;
+                StateHasChanged();
+            }
+            catch (Exception)
+            {
+                // Ensure we reset state even if an error occurs
+                _isNavigating = false;
+                StateHasChanged();
+            }
+        }
+    }
+}
