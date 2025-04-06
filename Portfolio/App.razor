@@ -1,12 +1,62 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+﻿<CascadingValue Value="this">
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <MudContainer Class="mt-6">
+                    <MudText Typo="Typo.h4" Align="Align.Center" GutterBottom="true">Page not found</MudText>
+                    <MudText Typo="Typo.body1" Align="Align.Center">
+                        Sorry, there's nothing at this address.
+                    </MudText>
+                    <MudContainer Class="d-flex justify-center mt-4">
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" Link="/">Go Home</MudButton>
+                    </MudContainer>
+                </MudContainer>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingValue>
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+@code
+{
+    private bool _isDarkMode = false;
+
+    private MudTheme _theme = new()
+    {
+        Palette = new PaletteLight()
+        {
+            Primary = "#594AE2",
+            Secondary = "#ff4081",
+            AppbarBackground = "#594AE2",
+            Background = "#F5F5F5",
+            DrawerBackground = "#FFF",
+            DrawerText = "rgba(0,0,0, 0.7)",
+            Surface = "#FFF"
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Primary = "#7e57c2",
+            Secondary = "#ff4081",
+            AppbarBackground = "#1E1E1E",
+            Background = "#121212",
+            DrawerBackground = "#1E1E1E",
+            DrawerText = "rgba(255,255,255, 0.8)",
+            Surface = "#1E1E1E"
+        }
+    };
+
+    // Method to be invoked from MainLayout to toggle theme
+    public void ToggleTheme()
+    {
+        _isDarkMode = !_isDarkMode;
+        StateHasChanged();
+    }
+}
