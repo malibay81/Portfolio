@@ -68,7 +68,6 @@
         NavigationManager.LocationChanged -= HandleLocationChanged;
     }
 
-    // Use async void for event handlers
     private async void HandleLocationChanged(object? sender, LocationChangedEventArgs e)
     {
         if (_currentUri != e.Location)
@@ -83,15 +82,15 @@
 
                 // Give time for the navigation to complete
                 await Task.Delay(300);
-
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Navigation error: {ex.Message}");
+            }
+            finally
+            {
                 _isNavigating = false;
                 _currentUri = e.Location;
-                StateHasChanged();
-            }
-            catch (Exception)
-            {
-                // Ensure we reset state even if an error occurs
-                _isNavigating = false;
                 StateHasChanged();
             }
         }
