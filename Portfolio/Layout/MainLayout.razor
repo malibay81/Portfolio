@@ -1,3 +1,96 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
 
-@Body
+<MudLayout Class="bg-custom-dark">
+    <MudAppBar Class="bg-custom-dark" Elevation="1" Fixed="true" Dense="true">
+        <MudIconButton Icon="@Icons.Material.Filled.Code" Color="Color.Inherit" Edge="Edge.Start" Href="/" />
+        <MudText Typo="Typo.h6" Class="ml-2">PORTFOLIO</MudText>
+        <MudSpacer />
+
+        <MudIconButton Icon="@Icons.Material.Filled.Work" Color="Color.Inherit"
+            Href="/projects" Class="ml-4">Projects</MudIconButton>
+        <MudIconButton Icon="@Icons.Material.Filled.Psychology" Color="Color.Inherit"
+            Href="/skills">Skills</MudIconButton>
+
+        <MudSpacer />
+
+        <MudIconButton Icon="@(_isDarkMode? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode)"
+            Color="Color.Inherit" OnClick="ToggleTheme" />
+        <MudIconButton Icon="@Icons.Material.Filled.Info" Color="Color.Inherit"
+            Href="/about">About</MudIconButton>
+        <MudIconButton Icon="@Icons.Material.Filled.Email" Color="Color.Inherit"
+            Href="/contact">Contact</MudIconButton>
+        <MudAvatar Color="Color.Secondary" Class="ml-2">MAB</MudAvatar>
+    </MudAppBar>
+
+    <MudMainContent Class="pt-16 pb-16 bg-custom-dark d-flex flex-column"
+        Style="min-height: calc(100vh - 60px); flex: 1 1 auto;">
+        @Body
+    </MudMainContent>
+
+    <MudAppBar Bottom="true" Fixed="true" Dense="true" Elevation="1" Class="footer  bg-custom-dark">
+        <MudText Typo="Typo.body2">© @DateTime.Now.Year - Portfolio App - Created with Blazor & MudBlazor</MudText>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Href="https://github.com/malibay81/"
+            Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Inherit"
+            Href="https://linkedin.com/in/m-ali-bayrak-0a8036331/"
+            Target="_blank" />
+    </MudAppBar>
+</MudLayout>
+
+<style>
+    .bg-custom-dark {
+        background-color: #020617 !important;
+        /* Match slate-900 from your image */
+    }
+
+    .animate {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @@keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Add smooth transitions to all interactive elements */
+    .mud-button,
+    .mud-icon-button {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .mud-button:hover,
+    .mud-icon-button:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+@code
+{
+    private bool _isDarkMode = true; // Changed to true to match App.razor
+
+    [CascadingParameter]
+    private App? AppState { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // Initialize theme from local storage or user preference
+    }
+
+    private void ToggleTheme()
+    {
+        _isDarkMode = !_isDarkMode;
+        if (AppState != null)
+        {
+            AppState.ToggleTheme();
+        }
+    }
+}
