@@ -40,44 +40,56 @@
 {
     private bool _isDarkMode = true; // Set dark mode as default
 
-    // Theme with the dark navy background from your image
+    // Theme using Tailwind CSS colors
     private MudTheme _theme = new MudTheme()
     {
         Palette = new PaletteLight()
         {
-            // Light mode palette
-            Primary = "#0EA5E9", // sky-500
-            Secondary = "#6366F1", // indigo-500
-            Background = "#F1F5F9", // slate-100
-            Surface = "#FFFFFF", // white
-            AppbarBackground = "#0EA5E9", // sky-500
+            // Light mode using Tailwind CSS colors
+            Primary = "#3B82F6",          // blue-500
+            Secondary = "#8B5CF6",        // violet-500
+            Tertiary = "#EC4899",         // pink-500
+            Info = "#06B6D4",             // cyan-500
+            Success = "#10B981",          // emerald-500
+            Warning = "#F59E0B",          // amber-500
+            Error = "#EF4444",            // red-500
+            Dark = "#1E293B",             // slate-800
+            
+            // Background colors
+            Background = "#F8FAFC",       // slate-50
+            Surface = "#FFFFFF",          // white
+            AppbarBackground = "#3B82F6", // blue-500
             DrawerBackground = "#FFFFFF", // white
-            DrawerText = "#475569", // slate-600
-            Success = "#10B981", // emerald-500
-            Warning = "#F59E0B", // amber-500
-            Error = "#EF4444", // red-500
-            Dark = "#1E293B", // slate-800
-            TextPrimary = "#1E293B", // slate-800
-            TextSecondary = "#475569", // slate-600
-            Info = "#3B82F6", // blue-500
+            
+            // Text colors
+            TextPrimary = "#0F172A",      // slate-900
+            TextSecondary = "#475569",    // slate-600
+            DrawerText = "#475569",       // slate-600
+            AppbarText = "#FFFFFF",       // white
         },
         PaletteDark = new PaletteDark()
         {
-            // Dark mode palette with your specific navy color
-            Primary = "#38BDF8", // sky-400
-            Secondary = "#818CF8", // indigo-400
-            Background = "#020617", // The dark navy from your image (close to slate-950)
-            Surface = "#030712", // Slightly lighter for surface elements
-            AppbarBackground = "#020617", // Same dark navy
-            DrawerBackground = "#020617", // Same dark navy
-            DrawerText = "#E2E8F0", // slate-200
-            Success = "#34D399", // emerald-400
-            Warning = "#FBBF24", // amber-400
-            Error = "#F87171", // red-400
-            Info = "#60A5FA", // blue-400
-            Dark = "#F8FAFC", // slate-50
-            TextPrimary = "#F8FAFC", // slate-50
-            TextSecondary = "#E2E8F0", // slate-200
+            // Dark mode using Tailwind CSS colors
+            Primary = "#60A5FA",          // blue-400
+            Secondary = "#A78BFA",        // violet-400
+            Tertiary = "#F472B6",         // pink-400
+            Info = "#22D3EE",             // cyan-400
+            Success = "#34D399",          // emerald-400
+            Warning = "#FBBF24",          // amber-400
+            Error = "#F87171",            // red-400
+            Dark = "#F8FAFC",             // slate-50
+            
+            // Background colors
+            Background = "#0F172A",       // slate-900
+            Surface = "#1E293B",          // slate-800
+            AppbarBackground = "#0F172A", // slate-900
+            DrawerBackground = "#0F172A", // slate-900
+            
+            // Text colors
+            TextPrimary = "#F8FAFC",      // slate-50
+            TextSecondary = "#CBD5E1",    // slate-300
+            DrawerText = "#CBD5E1",       // slate-300
+            AppbarText = "#F8FAFC",       // slate-50
         },
         Typography = new Typography()
         {
