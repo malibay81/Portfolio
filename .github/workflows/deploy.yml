@@ -41,19 +41,35 @@ jobs:
     - name: Add .nojekyll file
       run: touch ./publish/wwwroot/.nojekyll
 
-    # Add timestamp to force cache invalidation
+    # Add timestamp to force cache invalidation - ENHANCED VERSION
     - name: Add cache busting
       run: |
+        # Create directory for the timestamp file if it doesn't exist
+        mkdir -p ./publish/wwwroot/js
+        
         # Create a timestamp file
         DEPLOY_TIME=$(date +%Y%m%d%H%M%S)
         echo "window.deployTimestamp = '$DEPLOY_TIME';" > ./publish/wwwroot/js/app-version.js
         
-        # Add reference to the timestamp file in index.html
+        # Add cache-control meta tags to the HTML
+        sed -i 's/<head>/<head>\n  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" \/>\n  <meta http-equiv="Pragma" content="no-cache" \/>\n  <meta http-equiv="Expires" content="0" \/>/g' ./publish/wwwroot/index.html
+        sed -i 's/<head>/<head>\n  <meta name="version" content="'$DEPLOY_TIME'" \/>/g' ./publish/wwwroot/index.html
+        
+        # Add timestamp to the script reference
         sed -i 's/<\/head>/<script src="js\/app-version.js?v='$DEPLOY_TIME'"><\/script><\/head>/g' ./publish/wwwroot/index.html
         
-        # Add cache control headers via _headers file for Netlify/GitHub Pages
-        echo "/*" > ./publish/wwwroot/_headers
-        echo "  Cache-Control: no-cache, must-revalidate" >> ./publish/wwwroot/_headers
+        # Add timestamp to blazor.webassembly.js to force reload
+        if [ -f "./publish/wwwroot/_framework/blazor.webassembly.js" ]; then
+          sed -i 's/<script src="_framework\/blazor.webassembly.js"><\/script>/<script src="_framework\/blazor.webassembly.js?v='$DEPLOY_TIME'"><\/script>/g' ./publish/wwwroot/index.html
+        fi
+        
+        # Add timestamp to CSS files
+        for cssfile in ./publish/wwwroot/css/*.css; do
+          filename=$(basename "$cssfile")
+          sed -i 's/href="css\/'$filename'"/href="css\/'$filename'?v='$DEPLOY_TIME'"/g' ./publish/wwwroot/index.html
+        done
+        
+        echo "Cache busting applied with timestamp: $DEPLOY_TIME"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
