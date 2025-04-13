@@ -77,11 +77,11 @@
                 _isNavigating = true;
                 StateHasChanged();
 
-                // Short delay to allow the overlay to appear
-                await Task.Delay(50);
+                // Remove the initial delay - it's causing the flash
+                // await Task.Delay(50);
 
-                // Give time for the navigation to complete
-                await Task.Delay(300);
+                // Give time for the navigation to complete - increase this if needed
+                await Task.Delay(500);
             }
             catch (Exception ex)
             {

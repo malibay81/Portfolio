@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
+@inject IJSRuntime JSRuntime
 
 <CascadingValue Value="this">
 
@@ -65,9 +66,22 @@
         }
     };
 
-    public void ToggleTheme()
+    protected override async Task OnInitializedAsync()
+    {
+        // Load theme preference from localStorage
+        var storedTheme = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "portfolioTheme");
+        if (!string.IsNullOrEmpty(storedTheme))
+        {
+            _isDarkMode = storedTheme == "dark";
+        }
+    }
+
+    public async void ToggleTheme()
     {
         _isDarkMode = !_isDarkMode;
+        // Save theme preference to localStorage
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "portfolioTheme", _isDarkMode ? "dark" : "light");
         StateHasChanged();
     }
 }
+    

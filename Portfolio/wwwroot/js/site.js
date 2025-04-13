@@ -16,3 +16,11 @@ window.scrollToElement = (elementId) => {
 };
 
 window.scrollToElement = scrollToElement;
+
+window.getThemePreference = () => {
+    return localStorage.getItem('portfolioTheme') || 'light';
+};
+
+window.setThemePreference = (theme) => {
+    localStorage.setItem('portfolioTheme', theme);
+};
