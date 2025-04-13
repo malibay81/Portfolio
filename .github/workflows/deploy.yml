@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '9.0.x'
 
@@ -26,10 +26,38 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Publish
-      run: dotnet publish --configuration Release --output ./publish --no-build
+      run: dotnet publish Portfolio/Portfolio.csproj --configuration Release --output ./publish --no-build --self-contained true -p:BlazorEnableCompression=true -p:BlazorWasmPrerenderingMode=false
+
+    # Add base href based on your GitHub repository name
+    - name: Change base-tag in index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/Portfolio\/" \/>/g' ./publish/wwwroot/index.html
+      # Note: Replace "Portfolio" with your actual repository name
+
+    # Handle client-side routing for SPA
+    - name: Copy index.html to 404.html
+      run: cp ./publish/wwwroot/index.html ./publish/wwwroot/404.html
+
+    # Add .nojekyll file to tell GitHub not to use Jekyll
+    - name: Add .nojekyll file
+      run: touch ./publish/wwwroot/.nojekyll
+
+    # Add timestamp to force cache invalidation
+    - name: Add cache busting
+      run: |
+        # Create a timestamp file
+        DEPLOY_TIME=$(date +%Y%m%d%H%M%S)
+        echo "window.deployTimestamp = '$DEPLOY_TIME';" > ./publish/wwwroot/js/app-version.js
+        
+        # Add reference to the timestamp file in index.html
+        sed -i 's/<\/head>/<script src="js\/app-version.js?v='$DEPLOY_TIME'"><\/script><\/head>/g' ./publish/wwwroot/index.html
+        
+        # Add cache control headers via _headers file for Netlify/GitHub Pages
+        echo "/*" > ./publish/wwwroot/_headers
+        echo "  Cache-Control: no-cache, must-revalidate" >> ./publish/wwwroot/_headers
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.PORTFOLIO_TOKEN }}
         publish_dir: ./publish/wwwroot
+        force_orphan: true
