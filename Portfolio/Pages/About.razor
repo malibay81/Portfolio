@@ -1,8 +1,50 @@
 @page "/about"
 
 <PageContainer>
-    <h1>About Page</h1>
-    <!-- Your page content here -->
+    <div class="max-w-4xl mx-auto py-12 px-4">
+        <h1 class="text-4xl font-bold text-center mb-8">About Us</h1>
+
+        <p class="text-lg text-center mb-12 opacity-80">
+            We're a team of passionate developers creating innovative digital solutions.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white/50 rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-2xl font-semibold mb-3">Our Mission</h2>
+                <p class="opacity-75">
+                    To build elegant, high-performance web applications that solve real-world problems
+                    and deliver exceptional user experiences.
+                </p>
+            </div>
+
+            <div class="bg-white/50 rounded-lg shadow-sm p-6 border border-gray-100">
+                <h2 class="text-2xl font-semibold mb-3">Our Vision</h2>
+                <p class="opacity-75">
+                    To become industry leaders in web development through technical excellence,
+                    innovation, and customer satisfaction.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-8 mb-12">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Our Expertise</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full">Blazor</span>
+                <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full">.NET Core</span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full">React</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full">JavaScript</span>
+                <span class="px-4 py-2 bg-red-100 text-red-800 rounded-full">UI/UX Design</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">Cloud Solutions</span>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button
+                class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors duration-300">
+                Contact Us
+            </button>
+        </div>
+    </div>
 </PageContainer>
 
 @code
