@@ -1,0 +1,75 @@
+﻿@page "/"
+
+<PageTitle>Portfolio</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="px-0" Style="margin-top: -24px; margin-bottom: 32px;">
+    <MudPaper Elevation="0" Class="hero-section" Style="background-color: #020617; border-radius: 0; padding: 0;">
+        <MudGrid>
+            <MudItem xs="12" md="6" Class="d-flex flex-column justify-center px-8 py-16">
+                <MudText Typo="Typo.h2" Color="Color.Primary" Class="mb-4 fw-bold">Welcome to My Portfolio</MudText>
+                <MudText Typo="Typo.h5" Color="Color.Surface" Class="mb-8">
+                    Full Stack Developer & Designer creating modern web experiences
+                </MudText>
+                <MudText Color="Color.Secondary" Class="mb-8">
+                    I build creative solutions using Blazor, .NET, and modern web technologies
+                </MudText>
+                <div class="d-flex flex-wrap gap-3">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Size="Size.Large">
+                        View My Work
+                    </MudButton>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Secondary" Size="Size.Large">
+                        Contact Me
+                    </MudButton>
+                </div>
+            </MudItem>
+            <MudItem xs="12" md="6" Class="position-relative overflow-hidden d-flex align-center justify-center">
+                <div class="image-container">
+                    <MudImage Src="images/portfolio_image.jpg"
+                        Alt="Portfolio Image"
+                        Class="hero-image"
+                        Elevation="0"
+                        ObjectFit="ObjectFit.Cover"
+                        Style="width: 100%;" />
+                 </div>
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+</MudContainer>
+
+<style>
+    .hero-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .hero-image {
+        mix-blend-mode: screen;
+        /* Less aggressive than multiply */
+        transition: transform 0.3s ease-in-out;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @@media (min-width: 960px) {
+        .hero-image {
+            /* Softer mask that won't hide the entire image */
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, black 30%, black 70%, rgba(0, 0, 0, 0.8) 100%);
+            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, black 30%, black 70%, rgba(0, 0, 0, 0.8) 100%);
+        }
+    }
+
+    .hero-image:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+@code
+{
+}

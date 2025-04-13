@@ -38,31 +38,53 @@
 
 @code
 {
-    private bool _isDarkMode = false;
+    private bool _isDarkMode = true; // Set dark mode as default
 
-    // Custom theme colors
+    // Theme with the dark navy background from your image
     private MudTheme _theme = new MudTheme()
     {
         Palette = new PaletteLight()
         {
-            Primary = "#3949AB",
-            Secondary = "#FF4081",
-            AppbarBackground = "#3949AB",
-            Background = "#F5F5F5",
-            DrawerBackground = "#FFF",
-            DrawerText = "rgba(0,0,0, 0.7)",
-            Success = "#007E33"
+            // Light mode palette
+            Primary = "#0EA5E9", // sky-500
+            Secondary = "#6366F1", // indigo-500
+            Background = "#F1F5F9", // slate-100
+            Surface = "#FFFFFF", // white
+            AppbarBackground = "#0EA5E9", // sky-500
+            DrawerBackground = "#FFFFFF", // white
+            DrawerText = "#475569", // slate-600
+            Success = "#10B981", // emerald-500
+            Warning = "#F59E0B", // amber-500
+            Error = "#EF4444", // red-500
+            Dark = "#1E293B", // slate-800
+            TextPrimary = "#1E293B", // slate-800
+            TextSecondary = "#475569", // slate-600
+            Info = "#3B82F6", // blue-500
         },
         PaletteDark = new PaletteDark()
         {
-            Primary = "#5C6BC0",
-            Secondary = "#FF80AB",
-            AppbarBackground = "#252525",
-            Background = "#1E1E1E",
-            Surface = "#252525",
-            DrawerBackground = "#1E1E1E",
-            DrawerText = "rgba(255,255,255, 0.7)",
-            Success = "#00C851"
+            // Dark mode palette with your specific navy color
+            Primary = "#38BDF8", // sky-400
+            Secondary = "#818CF8", // indigo-400
+            Background = "#020617", // The dark navy from your image (close to slate-950)
+            Surface = "#030712", // Slightly lighter for surface elements
+            AppbarBackground = "#020617", // Same dark navy
+            DrawerBackground = "#020617", // Same dark navy
+            DrawerText = "#E2E8F0", // slate-200
+            Success = "#34D399", // emerald-400
+            Warning = "#FBBF24", // amber-400
+            Error = "#F87171", // red-400
+            Info = "#60A5FA", // blue-400
+            Dark = "#F8FAFC", // slate-50
+            TextPrimary = "#F8FAFC", // slate-50
+            TextSecondary = "#E2E8F0", // slate-200
+        },
+        Typography = new Typography()
+        {
+            Default = new Default()
+            {
+                FontFamily = new[] { "Inter", "ui-sans-serif", "system-ui", "sans-serif" }
+            }
         }
     };
 
@@ -84,4 +106,3 @@
         StateHasChanged();
     }
 }
-    
