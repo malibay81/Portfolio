@@ -1,14 +1,23 @@
+:root {
+    --page-bg-color: #0F172A;
+    /* This matches the slate-900 color from your theme */
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: var(--page-bg-color);
+    color: #F8FAFC;
+    /* slate-50 for text to ensure readability */
 }
 
 #app {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--page-bg-color);
 }
 
 .page-content {
