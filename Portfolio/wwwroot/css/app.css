@@ -1,23 +1,24 @@
-:root {
-    --page-bg-color: #0F172A;
-    /* This matches the slate-900 color from your theme */
+html {
+    height: 100%;
 }
 
-html,
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: var(--page-bg-color);
-    color: #F8FAFC;
-    /* slate-50 for text to ensure readability */
+    background-color: var(--mud-palette-background);
+    /* Use MudBlazor theme variable */
+    color: var(--mud-palette-text-primary);
+    /* Use MudBlazor theme variable */
+    /* font-family: var(--mud-typography-body1-font-family); Ensure consistent font */
 }
 
 #app {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: var(--page-bg-color);
+    /* #app should be transparent to body or use the same background.
+       If body has the background, #app doesn't strictly need it again. */
 }
 
 .page-content {

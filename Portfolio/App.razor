@@ -39,6 +39,7 @@
 @code
 {
     private bool _isDarkMode = true; // Set dark mode as default
+    public bool IsDarkMode => _isDarkMode;
 
     // Theme using Tailwind CSS colors
     private MudTheme _theme = new MudTheme()
@@ -46,50 +47,50 @@
         Palette = new PaletteLight()
         {
             // Light mode using Tailwind CSS colors
-            Primary = "#3B82F6",          // blue-500
-            Secondary = "#8B5CF6",        // violet-500
-            Tertiary = "#EC4899",         // pink-500
-            Info = "#06B6D4",             // cyan-500
-            Success = "#10B981",          // emerald-500
-            Warning = "#F59E0B",          // amber-500
-            Error = "#EF4444",            // red-500
-            Dark = "#1E293B",             // slate-800
-            
+            Primary = "#3B82F6", // blue-500
+            Secondary = "#8B5CF6", // violet-500
+            Tertiary = "#EC4899", // pink-500
+            Info = "#06B6D4", // cyan-500
+            Success = "#10B981", // emerald-500
+            Warning = "#F59E0B", // amber-500
+            Error = "#EF4444", // red-500
+            Dark = "#1E293B", // slate-800
+
             // Background colors
-            Background = "#F8FAFC",       // slate-50
-            Surface = "#FFFFFF",          // white
+            Background = "#F8FAFC", // slate-50
+            Surface = "#FFFFFF", // white
             AppbarBackground = "#3B82F6", // blue-500
             DrawerBackground = "#FFFFFF", // white
-            
+
             // Text colors
-            TextPrimary = "#0F172A",      // slate-900
-            TextSecondary = "#475569",    // slate-600
-            DrawerText = "#475569",       // slate-600
-            AppbarText = "#FFFFFF",       // white
+            TextPrimary = "#0F172A", // slate-900
+            TextSecondary = "#475569", // slate-600
+            DrawerText = "#475569", // slate-600
+            AppbarText = "#FFFFFF", // white
         },
         PaletteDark = new PaletteDark()
         {
             // Dark mode using Tailwind CSS colors
-            Primary = "#60A5FA",          // blue-400
-            Secondary = "#A78BFA",        // violet-400
-            Tertiary = "#F472B6",         // pink-400
-            Info = "#22D3EE",             // cyan-400
-            Success = "#34D399",          // emerald-400
-            Warning = "#FBBF24",          // amber-400
-            Error = "#F87171",            // red-400
-            Dark = "#F8FAFC",             // slate-50
-            
+            Primary = "#60A5FA", // blue-400
+            Secondary = "#A78BFA", // violet-400
+            Tertiary = "#F472B6", // pink-400
+            Info = "#22D3EE", // cyan-400
+            Success = "#34D399", // emerald-400
+            Warning = "#FBBF24", // amber-400
+            Error = "#F87171", // red-400
+            Dark = "#F8FAFC", // slate-50
+
             // Background colors
-            Background = "#0F172A",       // slate-900
-            Surface = "#1E293B",          // slate-800
+            Background = "#0F172A", // slate-900
+            Surface = "#1E293B", // slate-800
             AppbarBackground = "#0F172A", // slate-900
             DrawerBackground = "#0F172A", // slate-900
-            
+
             // Text colors
-            TextPrimary = "#F8FAFC",      // slate-50
-            TextSecondary = "#CBD5E1",    // slate-300
-            DrawerText = "#CBD5E1",       // slate-300
-            AppbarText = "#F8FAFC",       // slate-50
+            TextPrimary = "#F8FAFC", // slate-50
+            TextSecondary = "#CBD5E1", // slate-300
+            DrawerText = "#CBD5E1", // slate-300
+            AppbarText = "#F8FAFC", // slate-50
         },
         Typography = new Typography()
         {
@@ -107,6 +108,7 @@
         if (!string.IsNullOrEmpty(storedTheme))
         {
             _isDarkMode = storedTheme == "dark";
+            StateHasChanged(); // Ensure component re-renders with loaded theme state
         }
     }
 
