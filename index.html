@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="container">
+            <div class="logo">My Portfolio</div>
+            <nav>
+                <button onclick="showLanguage('en')">English</button>
+                <button onclick="showLanguage('de')">German</button>
+                <button onclick="showLanguage('tr')">Turkish</button>
+                <button id="theme-switcher">Toggle Theme</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="en" class="language-content">
+            <div class="hero">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Project Engineer and Software Developer</p>
+            </div>
+            <div class="content-section">
+                <h2>About Me</h2>
+                <p>I am a Project Engineer and Software Developer with 18 years of experience in special machine construction for the engine, pump, and automotive industries. My expertise ranges from project planning with customers to support after the Start of Production (SOP).</p>
+            </div>
+            <div class="content-section">
+                <h2>Skills</h2>
+                <p>C#, WPF, WinForms, Blazor, Siemens S7, Beckhoff TwinCAT, CANoe, CANape, CAnalyzer, Jira, MS Office, .NET Interactive / Polyglot Notebooks, HTML5, Markdown, SQL, Microsoft SQL Server, PostgreSQL, SQLite.</p>
+            </div>
+             <div class="content-section">
+                <h2>Projects</h2>
+                <p>Here you can find my projects.</p>
+                <!-- Add your projects here -->
+            </div>
+        </section>
+
+        <section id="de" class="language-content" style="display:none;">
+            <div class="hero">
+                <h1>Willkommen in meinem Portfolio</h1>
+                <p>Projektingenieur und Softwareentwickler</p>
+            </div>
+            <div class="content-section">
+                <h2>Über mich</h2>
+                <p>Ich bin ein Projektingenieur und Softwareentwickler mit 18 Jahren Erfahrung im Sondermaschinenbau für die Motoren-, Pumpen- und Automobilindustrie. Meine Expertise reicht von der Projektplanung mit Kunden bis hin zum Support nach dem Produktionsstart (SOP).</p>
+            </div>
+            <div class="content-section">
+                <h2>Kenntnisse</h2>
+                <p>C#, WPF, WinForms, Blazor, Siemens S7, Beckhoff TwinCAT, CANoe, CANape, CAnalyzer, Jira, MS Office, .NET Interactive / Polyglot Notebooks, HTML5, Markdown, SQL, Microsoft SQL Server, PostgreSQL, SQLite.</p>
+            </div>
+            <div class="content-section">
+                <h2>Projekte</h2>
+                <p>Hier finden Sie meine Projekte.</p>
+                <!-- Fügen Sie hier Ihre Projekte ein -->
+            </div>
+        </section>
+
+        <section id="tr" class="language-content" style="display:none;">
+            <div class="hero">
+                <h1>Portfolyoma Hoş Geldiniz</h1>
+                <p>Proje Mühendisi ve Yazılım Geliştirici</p>
+            </div>
+            <div class="content-section">
+                <h2>Hakkımda</h2>
+                <p>Motor, pompa ve otomotiv endüstrileri için özel makine yapımında 18 yıllık deneyime sahip bir Proje Mühendisi ve Yazılım Geliştiricisiyim. Uzmanlığım, müşterilerle proje planlamasından Üretim Başlangıcı (SOP) sonrası desteğe kadar uzanmaktadır.</p>
+            </div>
+            <div class="content-section">
+                <h2>Yetenekler</h2>
+                <p>C#, WPF, WinForms, Blazor, Siemens S7, Beckhoff TwinCAT, CANoe, CANape, CAnalyzer, Jira, MS Office, .NET Interactive / Polyglot Notebooks, HTML5, Markdown, SQL, Microsoft SQL Server, PostgreSQL, SQLite.</p>
+            </div>
+             <div class="content-section">
+                <h2>Projeler</h2>
+                <p>Burada projelerimi bulabilirsiniz.</p>
+                <!-- Projelerinizi buraya ekleyin -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

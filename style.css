@@ -1,0 +1,105 @@
+:root {
+    --background-color-dark: #121212;
+    --text-color-dark: #e0e0e0;
+    --primary-color-dark: #82aaff;
+    --card-background-dark: #1e1e1e;
+
+    --background-color-light: #ffffff;
+    --text-color-light: #212121;
+    --primary-color-light: #2962ff;
+    --card-background-light: #f4f4f4;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-theme {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+.light-theme {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    padding: 1rem 0;
+    border-bottom: 1px solid #333;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+nav button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: inherit;
+    font-size: 1rem;
+}
+
+#theme-switcher {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.dark-theme #theme-switcher {
+    border-color: var(--primary-color-dark);
+}
+
+.light-theme #theme-switcher {
+     border-color: var(--primary-color-light);
+}
+
+.hero {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content-section {
+    background-color: var(--card-background-dark);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.light-theme .content-section {
+    background-color: var(--card-background-light);
+}
+
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color-dark);
+}
+
+.light-theme .content-section h2 {
+    color: var(--primary-color-light);
+}
