@@ -1,0 +1,107 @@
+{
+  "lottie_animations": {
+    "description": "Kuratierte Liste von Lottie-Animationen für Portfolio-Websites",
+    "categories": {
+      "technology": {
+        "name": "Technologie & Entwicklung",
+        "animations": [
+          {
+            "name": "Code/Programmieren",
+            "url": "https://assets5.lottiefiles.com/packages/lf20_gjsy1kb9.json",
+            "preview": "Fliessendes Code-Konzept"
+          },
+          {
+            "name": "Laptop/Computer",
+            "url": "https://assets1.lottiefiles.com/packages/lf20_m9zragkd.json",
+            "preview": "Laptop mit Animation"
+          },
+          {
+            "name": "Zahnräder/Technologie",
+            "url": "https://assets6.lottiefiles.com/packages/lf20_d4b4wz6p.json",
+            "preview": "Drehende Zahnräder"
+          },
+          {
+            "name": "Industrie 4.0",
+            "url": "https://assets8.lottiefiles.com/packages/lf20_psliinqd.json",
+            "preview": "Industrie-Symbol"
+          }
+        ]
+      },
+      "mechanics": {
+        "name": "Mechanik & Engineering",
+        "animations": [
+          {
+            "name": "Pumpe/Flüssigkeit",
+            "url": "https://assets9.lottiefiles.com/packages/lf20_9wjm14ni.json",
+            "preview": "Pumpensystem"
+          },
+          {
+            "name": "Motor/Drehmoment",
+            "url": "https://assets3.lottiefiles.com/packages/lf20_qvw0b4tn.json",
+            "preview": "Rotierender Motor"
+          },
+          {
+            "name": "Werkzeuge",
+            "url": "https://assets2.lottiefiles.com/packages/lf20_jcikqtia.json",
+            "preview": "Verschiedene Werkzeuge"
+          }
+        ]
+      },
+      "ui_elements": {
+        "name": "UI Elemente",
+        "animations": [
+          {
+            "name": "Loading Spinner",
+            "url": "https://assets6.lottiefiles.com/packages/lf20_m4xmkm5j.json",
+            "preview": "Lade-Animation"
+          },
+          {
+            "name": "Checkmark",
+            "url": "https://assets3.lottiefiles.com/packages/lf20_p0o1a5w9.json",
+            "preview": "Erfolgs-Haken"
+          },
+          {
+            "name": "Arrow/Pfeil",
+            "url": "https://assets5.lottiefiles.com/packages/lf20_l2skuclg.json",
+            "preview": "Animierter Pfeil"
+          }
+        ]
+      },
+      "professional": {
+        "name": "Business & Professionell",
+        "animations": [
+          {
+            "name": "Analytics/Daten",
+            "url": "https://assets4.lottiefiles.com/packages/lf20_rpo6oj3w.json",
+            "preview": "Daten-Diagramm"
+          },
+          {
+            "name": "Netzwerk/Verbindung",
+            "url": "https://assets7.lottiefiles.com/packages/lf20_rco9s8ql.json",
+            "preview": "Verbundenes Netzwerk"
+          },
+          {
+            "name": "Sicherheit/Lock",
+            "url": "https://assets2.lottiefiles.com/packages/lf20_tqb1jx5w.json",
+            "preview": "Sicherheits-Schloss"
+          }
+        ]
+      }
+    },
+    "usage": {
+      "basic": "<lottie-player src='URL' background='transparent' speed='1' style='width: 300px; height: 300px;' loop autoplay></lottie-player>",
+      "with_controls": "<lottie-player src='URL' background='transparent' speed='1' style='width: 300px; height: 300px;' loop autoplay controls></lottie-player>",
+      "custom_size": "<lottie-player src='URL' background='transparent' speed='1' style='width: 500px; height: 400px;' loop autoplay></lottie-player>"
+    },
+    "tips": {
+      "performance": "Nutzen Sie intersection observer um Animationen nur zu laden wenn sie sichtbar sind",
+      "speed": "Benutzen Sie speed='0.8' bis speed='1.5' für unterschiedliche Effekte",
+      "colors": "Einige Animationen unterstützen dynamische Farbanpassung (siehe LottieFiles Docs)",
+      "alternative_sources": [
+        "https://lottiefiles.com",
+        "https://airbnb.design/lottie/",
+        "https://shapeshifter.design/"
+      ]
+    }
+  }
+}
