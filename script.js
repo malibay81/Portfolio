@@ -9,16 +9,6 @@ function showLanguage(lang) {
     if (selectedSection) {
         selectedSection.style.display = 'block';
     }
-    
-    // Reload Lottie animations when language changes
-    setTimeout(() => {
-        const lottieElements = document.querySelectorAll('lottie-player');
-        lottieElements.forEach(el => {
-            if (el.load) {
-                el.load();
-            }
-        });
-    }, 100);
 }
 
 function toggleTheme() {
@@ -26,24 +16,9 @@ function toggleTheme() {
     body.classList.toggle('dark-theme');
     body.classList.toggle('light-theme');
     
-    // Optional: Store theme preference in localStorage
     const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
     localStorage.setItem('theme', currentTheme);
 }
-
-// Lottie Animation Observer for autoplay when visible
-const lottieObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        const lottiePlayer = entry.target.querySelector('lottie-player');
-        if (lottiePlayer) {
-            if (entry.isIntersecting) {
-                lottiePlayer.play && lottiePlayer.play();
-            } else {
-                lottiePlayer.pause && lottiePlayer.pause();
-            }
-        }
-    });
-}, { threshold: 0.5 });
 
 // Content section observer for fade-in animations
 const observer = new IntersectionObserver((entries) => {
@@ -96,9 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     showLanguage('en');
 
     // Restore theme preference from localStorage
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-        toggleTheme();
+    try {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            toggleTheme();
+        }
+    } catch (e) {
+        console.log('localStorage not available (tracking prevention)');
     }
 
     // Add event listener for theme switcher
@@ -110,25 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setup gallery
     setupGallery();
     
-    // Initialize observers and lottie players
-    setTimeout(() => {
-        // Observe hidden content sections
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach((el) => observer.observe(el));
+    // Initialize observers
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
 
-        // Observe project icons for animation
-        const projectIcons = document.querySelectorAll('.project-icon');
-        projectIcons.forEach((icon) => {
-            lottieObserver.observe(icon);
-        });
-        
-        // Initialize all lottie players
-        const lottieElements = document.querySelectorAll('lottie-player');
-        console.log('Found ' + lottieElements.length + ' Lottie players');
-        lottieElements.forEach(el => {
-            if (el.load) {
-                el.load();
-            }
-        });
-    }, 300);
+    console.log('Portfolio ready');
 });
