@@ -1,5 +1,5 @@
 :root {
-    --background-color-dark: #0f0c29;
+    --background-color-dark: #060606; /* Updated to #060606 */
     --text-color-dark: #e0e0e0;
     --primary-color-dark: #8a42f5;
     --card-background-dark: rgba(255, 255, 255, 0.05);
@@ -17,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
-    padding-top: 80px; 
+    padding-top: 80px;
     position: relative;
     overflow-x: hidden;
 }
@@ -29,7 +29,8 @@ body {
     width: 100%;
     height: 100vh;
     z-index: -1;
-    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #8a42f5);
+    /* Adjusted gradient colors to blend with #060606 better */
+    background: linear-gradient(-45deg, #060606, #1a1a2e, #2a0050, #8a42f5);
     background-size: 400% 400%;
     animation: gradientBG 25s ease infinite;
 }
@@ -228,7 +229,6 @@ nav button:hover {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -274,6 +274,7 @@ nav button:hover {
 
 .light-theme .project-tags span {
     background-color: var(--primary-color-light);
+    color: var(--background-color-light);
 }
 
 
