@@ -1,13 +1,15 @@
 :root {
-    --background-color-dark: #121212;
+    --background-color-dark: #0f0c29;
     --text-color-dark: #e0e0e0;
-    --primary-color-dark: #82aaff;
-    --card-background-dark: #1e1e1e;
+    --primary-color-dark: #8a42f5;
+    --card-background-dark: rgba(255, 255, 255, 0.05);
+    --border-color-dark: rgba(255, 255, 255, 0.2);
 
-    --background-color-light: #ffffff;
+    --background-color-light: #f4f4f9;
     --text-color-light: #212121;
     --primary-color-light: #2962ff;
-    --card-background-light: #f4f4f4;
+    --card-background-light: rgba(255, 255, 255, 0.8);
+    --border-color-light: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -15,7 +17,27 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
-    padding-top: 70px; /* Add padding to body to prevent content from being hidden by fixed header */
+    padding-top: 80px; 
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #8a42f5);
+    background-size: 400% 400%;
+    animation: gradientBG 25s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .dark-theme {
@@ -28,25 +50,35 @@ body {
     color: var(--text-color-light);
 }
 
+.light-theme .background-animation {
+    display: none;
+}
+
+
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 header {
-    position: fixed; /* Make the header fixed */
+    position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure header stays on top of other content */
-    background-color: var(--card-background-dark); /* Ensure background is set for fixed header */
+    left: 0;
+    right: 0;
+    z-index: 1000;
     padding: 1rem 0;
-    border-bottom: 1px solid #333;
     animation: fadeInDown 1s ease-in-out;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color-dark);
 }
 
 .light-theme header {
-    background-color: var(--card-background-light);
+    background: rgba(255,255,255,0.7);
+    border-bottom: 1px solid var(--border-color-light);
 }
 
 
@@ -59,64 +91,82 @@ header .container {
 .logo {
     font-size: 1.5rem;
     font-weight: 500;
+    text-shadow: 0 0 5px var(--primary-color-dark);
+}
+
+.light-theme .logo {
+    text-shadow: none;
 }
 
 nav button {
     margin-left: 10px;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
     cursor: pointer;
     background-color: transparent;
     color: inherit;
     font-size: 1rem;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
 }
 
 nav button:hover {
     background-color: var(--primary-color-dark);
-    color: var(--background-color-dark);
+    color: #fff;
+    border-color: var(--primary-color-dark);
 }
 
 .light-theme nav button:hover {
     background-color: var(--primary-color-light);
-    color: var(--background-color-light);
 }
 
 
 #theme-switcher {
-    border: 1px solid;
-    border-radius: 5px;
-}
-
-.dark-theme #theme-switcher {
-    border-color: var(--primary-color-dark);
+    border: 1px solid var(--border-color-dark);
 }
 
 .light-theme #theme-switcher {
-     border-color: var(--primary-color-light);
+     border-color: var(--border-color-light);
 }
 
 .hero {
-    padding: 4rem 0;
+    padding: 6rem 0;
     text-align: center;
     animation: fadeInUp 1s ease-in-out;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    text-shadow: 0 0 15px var(--primary-color-dark);
+}
+
+.light-theme .hero h1 {
+    text-shadow: none;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+.light-theme .hero p {
+    color: #555;
 }
 
 .content-section {
-    background-color: var(--card-background-dark);
+    background: var(--card-background-dark);
+    backdrop-filter: blur(10px);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color-dark);
     margin-bottom: 2rem;
     transition: transform 0.5s, opacity 0.5s;
 }
 
 .light-theme .content-section {
-    background-color: var(--card-background-light);
+    background: var(--card-background-light);
+     border: 1px solid var(--border-color-light);
 }
 
 .content-section.hidden {
@@ -131,13 +181,15 @@ nav button:hover {
 
 
 .content-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color-dark);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-color-dark);
 }
 
 .light-theme .content-section h2 {
-    color: var(--primary-color-light);
+    color: var(--text-color-light);
+    text-shadow: none;
 }
 
 .skills-list {
@@ -149,16 +201,18 @@ nav button:hover {
 }
 
 .skills-list li {
-    background-color: var(--primary-color-dark);
-    color: var(--background-color-dark);
-    padding: 5px 15px;
-    border-radius: 5px;
+    background-color: rgba(138, 66, 245, 0.2);
+    color: #e0e0e0;
+    padding: 8px 18px;
+    border-radius: 20px;
     font-weight: 500;
+    border: 1px solid var(--primary-color-dark);
 }
 
 .light-theme .skills-list li {
-    background-color: var(--primary-color-light);
-    color: var(--background-color-light);
+    background-color: rgba(41, 98, 255, 0.1);
+    color: var(--primary-color-light);
+    border: 1px solid var(--primary-color-light);
 }
 
 .projects-grid {
@@ -168,15 +222,37 @@ nav button:hover {
 }
 
 .project-card {
-    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color-dark);
     border-radius: 8px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 15px var(--primary-color-dark);
+}
+
+
+.light-theme .project-card {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--border-color-light);
+}
+
+.light-theme .project-card:hover {
+     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .project-card h3 {
     margin-top: 0;
+    color: var(--primary-color-dark);
+}
+
+.light-theme .project-card h3 {
+    color: var(--primary-color-light);
 }
 
 .project-tags {
@@ -189,15 +265,15 @@ nav button:hover {
 
 .project-tags span {
     background-color: var(--primary-color-dark);
-    color: var(--background-color-dark);
-    padding: 3px 10px;
-    border-radius: 3px;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 15px;
     font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .light-theme .project-tags span {
     background-color: var(--primary-color-light);
-    color: var(--background-color-light);
 }
 
 
