@@ -15,6 +15,7 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
+    padding-top: 70px; /* Add padding to body to prevent content from being hidden by fixed header */
 }
 
 .dark-theme {
@@ -34,9 +35,18 @@ body {
 }
 
 header {
+    position: fixed; /* Make the header fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header stays on top of other content */
+    background-color: var(--card-background-dark); /* Ensure background is set for fixed header */
     padding: 1rem 0;
     border-bottom: 1px solid #333;
     animation: fadeInDown 1s ease-in-out;
+}
+
+.light-theme header {
+    background-color: var(--card-background-light);
 }
 
 header .container {
