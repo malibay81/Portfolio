@@ -36,6 +36,7 @@ body {
 header {
     padding: 1rem 0;
     border-bottom: 1px solid #333;
+    animation: fadeInDown 1s ease-in-out;
 }
 
 header .container {
@@ -57,7 +58,19 @@ nav button {
     background-color: transparent;
     color: inherit;
     font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
 }
+
+nav button:hover {
+    background-color: var(--primary-color-dark);
+    color: var(--background-color-dark);
+}
+
+.light-theme nav button:hover {
+    background-color: var(--primary-color-light);
+    color: var(--background-color-light);
+}
+
 
 #theme-switcher {
     border: 1px solid;
@@ -75,6 +88,7 @@ nav button {
 .hero {
     padding: 4rem 0;
     text-align: center;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .hero h1 {
@@ -87,10 +101,21 @@ nav button {
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
+    transition: transform 0.5s, opacity 0.5s;
 }
 
 .light-theme .content-section {
     background-color: var(--card-background-light);
+}
+
+.content-section.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.content-section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -102,4 +127,26 @@ nav button {
 
 .light-theme .content-section h2 {
     color: var(--primary-color-light);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
