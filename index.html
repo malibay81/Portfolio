@@ -3,40 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio | Projektingenieur & Softwareentwickler</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>👨‍💻</text></svg>">
-    <!-- Lottie Animation Library -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest"></script>
 </head>
 <body class="dark-theme">
     <div class="background-animation"></div>
     <header>
         <div class="container">
-            <div class="logo">My Portfolio</div>
+            <div class="logo">Portfolio</div>
             <nav>
-                <button onclick="showLanguage('en')" title="English" style="padding: 8px 12px;">
-                    <svg width="24" height="16" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="display: inline;">
+                <button class="flag-btn" onclick="showLanguage('en')" title="English">
+                    <svg width="24" height="16" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
                         <rect width="60" height="40" fill="#012169"/>
                         <path d="M0,0 L60,40 M60,0 L0,40" stroke="#FFF" stroke-width="8"/>
                         <path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="5"/>
                     </svg>
                 </button>
-                <button onclick="showLanguage('de')" title="German" style="padding: 8px 12px;">
-                    <svg width="24" height="16" viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" style="display: inline;">
+                <button class="flag-btn" onclick="showLanguage('de')" title="Deutsch">
+                    <svg width="24" height="16" viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg">
                         <rect width="5" height="1" fill="#000"/>
                         <rect y="1" width="5" height="1" fill="#D00"/>
                         <rect y="2" width="5" height="1" fill="#FFCE00"/>
                     </svg>
                 </button>
-                <button onclick="showLanguage('tr')" title="Turkish" style="padding: 8px 12px;">
-                    <svg width="24" height="16" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" style="display: inline;">
+                <button class="flag-btn" onclick="showLanguage('tr')" title="Türkçe">
+                    <svg width="24" height="16" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
                         <rect width="36" height="24" fill="#E30613"/>
                         <circle cx="12" cy="12" r="7" fill="#FFF"/>
                         <circle cx="14" cy="12" r="5" fill="#E30613"/>
-                        <path d="M18,8 L20,10 L22,8 L21,10 L23,12 L21,12 L22,14 L20,12 L18,14 L19,12 L17,12 L19,10 Z" fill="#FFF"/>
+                        <polygon points="20,8 21,11 24,11 21.5,13 22.5,16 20,14 17.5,16 18.5,13 16,11 19,11" fill="#FFF"/>
                     </svg>
                 </button>
                 <button id="theme-switcher" title="Toggle Theme">🌓</button>
@@ -49,99 +47,256 @@
         <section id="de" class="language-content" style="display:none;">
             <div class="hero">
                 <div class="hero-text">
-                    <h1>Willkommen in meinem Portfolio</h1>
-                    <p>Projektingenieur & Softwareentwickler im Sondermaschinenbau</p>
+                    <span class="hero-badge">Dipl.-Ing. (FH) M. Ali Bayrak</span>
+                    <h1>Projekt- & Softwareingenieur</h1>
+                    <p>17+ Jahre Erfahrung in der Entwicklung kundenspezifischer Test- und Prüfsysteme für die Automobil-, Elektromotoren- und Pumpenindustrie bei Vogelsang & Benning.</p>
+                    <a href="#contact-de" class="cta-button">
+                        <span>Kontakt aufnehmen</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
-                <div class="hero-animation" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="150" cy="150" r="140" fill="rgba(255,255,255,0.1)"/>
-                        <rect x="80" y="100" width="140" height="100" rx="10" fill="white" opacity="0.2"/>
-                        <circle cx="120" cy="130" r="8" fill="white"/>
-                        <circle cx="180" cy="130" r="8" fill="white"/>
-                        <path d="M 120 160 Q 150 175 180 160" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                        <text x="150" y="240" font-size="40" text-anchor="middle" fill="white">💻</text>
+                <div class="hero-animation">
+                    <svg width="280" height="280" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a42f5;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="150" cy="150" r="130" fill="url(#grad1)" opacity="0.15"/>
+                        <circle cx="150" cy="150" r="100" fill="url(#grad1)" opacity="0.1"/>
+                        <rect x="85" y="95" width="130" height="90" rx="8" fill="none" stroke="url(#grad1)" stroke-width="3"/>
+                        <rect x="110" y="185" width="80" height="8" rx="4" fill="url(#grad1)" opacity="0.7"/>
+                        <text x="150" y="155" font-size="50" text-anchor="middle" fill="url(#grad1)">⚙️</text>
                     </svg>
                 </div>
             </div>
 
-            <div class="content-section hidden">
+            <div class="content-section fade-in-section">
                 <h2>Über mich</h2>
-                <p>Als erfahrener Projektingenieur und Softwareentwickler mit einer Leidenschaft für Technologie und Präzision schlage ich die Brücke zwischen komplexen maschinellen Anforderungen und intelligenter, robuster Software. In 18 Jahren Berufserfahrung habe ich gelernt, den gesamten Lebenszyklus eines Produkts zu beherrschen – von der ersten Idee mit dem Kunden bis zum langfristigen Support im Feld.</p>
+                <p>Als erfahrener Projekt- und Softwareingenieur mit Fokus auf Sondermaschinenbau und Prüfstandstechnik schlage ich die Brücke zwischen komplexen maschinellen Anforderungen und intelligenter, robuster Software. In über 17 Jahren Berufserfahrung bei <strong>Vogelsang & Benning</strong> habe ich gelernt, den gesamten Lebenszyklus kundenspezifischer Testsysteme zu beherrschen – von der ersten Kundenanfrage über Planung und Konzeption bis zur erfolgreichen Übergabe und langfristigen Nachbetreuung.</p>
             </div>
 
-            <div class="content-section hidden">
+            <div class="content-section fade-in-section">
                 <h2>Berufliche Erfahrung</h2>
-                <h3>Projektingenieur & Softwareentwickler im Sondermaschinenbau</h3>
-                <p>Seit 18 Jahren tätig in der Konzeption und Entwicklung von kundenspezifischen Test- und Prüfsystemen für die Automobil-, Motoren- und Pumpenindustrie. Meine Verantwortung reicht von der technischen Planung in Zusammenarbeit mit dem Kunden über die Softwarearchitektur und -entwicklung (C#, WPF, SPS) bis hin zur Inbetriebnahme und dem anschließenden Support. Schwerpunkt meiner Arbeit ist die Realisierung von automatisierten End-of-Line (EOL) Prüfständen, komplexen F&E-Prüffeldern und mobilen Diagnosesystemen, insbesondere im Zukunftsfeld der Elektromobilität und der industriellen Antriebstechnik.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Projekt- & Softwareingenieur</h4>
+                        <div class="date">Vogelsang & Benning GmbH | 2008 - Heute</div>
+                        <p>Projektierung und Softwareentwicklung im Sondermaschinen- und Prüfstandsbau. Schwerpunkt auf der Entwicklung individueller Lösungen für die Automobil-, Elektromotoren- und Pumpenindustrie.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Kernkompetenzen</h4>
+                        <div class="date">Tägliche Praxis</div>
+                        <ul class="competence-list">
+                            <li>🎯 <strong>Ganzheitliche Projektleitung:</strong> Verantwortung von Anfrage bis Übergabe</li>
+                            <li>🤝 <strong>Kundenbetreuung:</strong> Technische Beratung und Statusberichte</li>
+                            <li>📋 <strong>Anforderungsmanagement:</strong> Lasten- und Pflichtenhefte</li>
+                            <li>🚀 <strong>Inbetriebnahme:</strong> Aufbau, Abnahme und Produktionsstart vor Ort</li>
+                            <li>🔧 <strong>Troubleshooting:</strong> Schnelle Fehlerdiagnose bei komplexen Problemen</li>
+                            <li>📚 <strong>Schulung:</strong> Einweisung des Kundenpersonals</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Diplomarbeit</h4>
+                        <div class="date">Hochschule Bochum | 2008 | Note: 1,0</div>
+                        <p>Integration des Data Translation Multifunktionsmoduls DT9836 in eine Mess- und Prüfsoftware für Elektromotoren.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="content-section hidden">
-                <h2>Fähigkeiten</h2>
-                <ul class="skills-list">
-                    <li>C#</li>
-                    <li>WPF</li>
-                    <li>WinForms</li>
-                    <li>Blazor</li>
-                    <li>Siemens S7</li>
-                    <li>Beckhoff TwinCAT</li>
-                    <li>SQL (MS SQL, PostgreSQL, SQLite)</li>
-                    <li>Vector Informatik (CANoe, CANape)</li>
-                    <li>Jira</li>
-                    <li>.NET Interactive</li>
-                </ul>
-            </div>
-
-            <div class="content-section hidden">
-                <h2>Projekte</h2>
+            <div class="content-section fade-in-section">
+                <h2>Branchen & Prüfsysteme</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-icon" style="font-size: 60px;">🌐</div>
-                        <p>Architektur und Entwicklung eines zentralen Gateways zur Vereinheitlichung industrieller Kommunikationsprotokolle. Dieses System fungiert als Brücke zwischen verschiedensten Geräten und Systemen wie SPS-Steuerungen, Messwerterfassungshardware und übergeordneten IT-Systemen. Es ermöglicht eine nahtlose Datenaggregation und -verteilung durch die Anbindung von Schnittstellen wie REST, MQTT, SAP und diversen Feldbussen.</p>
+                        <div class="project-icon">🔌</div>
+                        <h3>Antriebstechnik</h3>
+                        <p>Elektromotorenprüfstände für DC-, AC-, Reluktanz- und Synchronmotoren. EOL-Prüfsysteme für Serienfertigung und hochpräzise F&E-Prüfstände. Wirkungsgradbestimmung nach EN 60034-2-1.</p>
                         <div class="project-tags">
-                            <span>C#</span>
-                            <span>.NET</span>
-                            <span>Architektur</span>
-                            <span>MQTT</span>
-                            <span>REST</span>
-                            <span>SPS</span>
-                            <span>SAP</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-icon" style="font-size: 60px;">⚡</div>
-                        <p>Entwicklung einer C#/WPF-Anwendung zur Steuerung und Datenerfassung eines Leistungsprüfstandes für Elektromotoren. Die Software kommuniziert via CAN-Bus mit dem Prüfling und einer SPS, visualisiert Messdaten in Echtzeit und erstellt am Ende einen Prüfbericht.</p>
-                        <div class="project-tags">
-                            <span>C#</span>
-                            <span>WPF</span>
-                            <span>CAN-Bus</span>
-                            <span>SPS</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-icon">
-                        <div class="project-icon" style="font-size: 60px;">🔧</div>
-                        <p>Konzeption und Programmierung eines vollautomatischen EOL-Prüfstandes für Industriepumpen. Meine Aufgabe war die SPS-Programmierung (Beckhoff TwinCAT) zur Steuerung der Aktorik und die Anbindung an ein übergeordnetes Leitsystem zur Verwaltung der Prüfpläne und Ergebnisse.</p>
-                         <div class="project-tags">
-                            <span>Beckhoff TwinCAT</span>
-                            <span>SPS</span>
                             <span>EOL</span>
+                            <span>F&E</span>
+                            <span>Wirkungsgrad</span>
                         </div>
                     </div>
                     <div class="project-card">
-                        <div class="project-icon" style="font-size: 60px;">📊</div>
-                        <h3>Enterprise Management System (EMS)</h3>
-                        <p>Konzeption, Architektur und Implementierung eines unternehmensweiten Enterprise Management Systems. Dieses System integriert und optimiert die gesamte Wertschöpfungskette durch Module wie Dokumentenmanagement (DMS), Kundenbeziehungsmanagement (CRM), Customer Service Management (CSM) und Produktlebenszyklusmanagement (PLM). Zudem beinhaltet es Funktionalitäten für die Verwaltung von Mitarbeiter-Praktika und internen Prozessen, wodurch es eine zentrale Plattform für alle Geschäftsbereiche darstellt.</p>
+                        <div class="project-icon">🚗</div>
+                        <h3>Automotive</h3>
+                        <p>Testsysteme für elektrische und elektromechanische Komponenten: Drehzahlsensoren, Lenkhilfemotoren, Hinterachslenkungen. TISAX®-zertifizierte Entwicklungsumgebung.</p>
+                        <div class="project-tags">
+                            <span>Sensoren</span>
+                            <span>TISAX®</span>
+                            <span>Dauerlauf</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">⚡</div>
+                        <h3>E-Mobilität</h3>
+                        <p>EOL-Prüfsysteme für Starter-Generator-Einheiten (48V-300V), E-Achsen mit/ohne Leistungselektronik, Inverter und Hybridantriebe.</p>
+                        <div class="project-tags">
+                            <span>E-Achsen</span>
+                            <span>Inverter</span>
+                            <span>Hybrid</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">💧</div>
+                        <h3>Pumpenprüftechnik</h3>
+                        <p>Prüfstände für Kreisel-, Verdränger-, Vakuum- und Tauchmotorpumpen. QH- und NPSH-Kennlinien, Kompressoren und Verdichter.</p>
+                        <div class="project-tags">
+                            <span>NPSH</span>
+                            <span>Kennlinien</span>
+                            <span>Kompressoren</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Software-Architektur</h2>
+                <p class="section-intro">Konzeption und Entwicklung modularer Softwarearchitekturen als Framework für Prüf- und Automatisierungslösungen:</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">📚</div>
+                        <h3>Framework-Bibliotheken</h3>
+                        <p>Flexible, wiederverwendbare Funktionsbibliotheken zur effizienten Erweiterbarkeit und Wartbarkeit.</p>
                         <div class="project-tags">
                             <span>C#</span>
                             <span>.NET</span>
-                            <span>Blazor</span>
-                            <span>SQL</span>
-                            <span>DMS</span>
-                            <span>CRM</span>
-                            <span>CSM</span>
-                            <span>PLM</span>
+                            <span>Modular</span>
                         </div>
                     </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔐</div>
+                        <h3>Benutzer- & Rechteverwaltung</h3>
+                        <p>Sichere Anmelde- und Berechtigungskonzepte für verschiedene Benutzerrollen mit Auditfähigkeit.</p>
+                        <div class="project-tags">
+                            <span>Auth</span>
+                            <span>RBAC</span>
+                            <span>Audit</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">📊</div>
+                        <h3>Statistik & Reporting</h3>
+                        <p>Automatisierte Berichte zur Qualitätssicherung, mathematische Analyse und grafische Visualisierung von Prüfergebnissen.</p>
+                        <div class="project-tags">
+                            <span>Charts</span>
+                            <span>Export</span>
+                            <span>QS</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔗</div>
+                        <h3>API & Schnittstellen</h3>
+                        <p>Anbindung externer Systeme (MES, ERP, SAP) über REST, OPC UA, MQTT. Integration von Sensoren und Automatisierungskomponenten.</p>
+                        <div class="project-tags">
+                            <span>REST</span>
+                            <span>OPC UA</span>
+                            <span>MQTT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Technologien & Tools</h2>
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h4>💻 Programmierung</h4>
+                        <ul class="skills-list">
+                            <li>C# / .NET 4.8 / .NET 3-10</li>
+                            <li>WPF & WinForms</li>
+                            <li>Blazor (WebAssembly)</li>
+                            <li>HTML5 / Markdown</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🔧 Automatisierung</h4>
+                        <ul class="skills-list">
+                            <li>Siemens S7 / TIA Portal</li>
+                            <li>Beckhoff TwinCAT 2/3</li>
+                            <li>Vector CANoe, CANape, CANalyzer</li>
+                            <li>.NET Interactive / Polyglot</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🗄️ Datenbanken</h4>
+                        <ul class="skills-list">
+                            <li>Microsoft SQL Server</li>
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🛠️ DevTools</h4>
+                        <ul class="skills-list">
+                            <li>JetBrains Rider & ReSharper</li>
+                            <li>Visual Studio / VS Code</li>
+                            <li>Git, GitHub, GitLab</li>
+                            <li>MS-Test, NUnit, xUnit</li>
+                            <li>Jira</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Studium</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Dipl.-Ing. (FH) Mechatronik</h4>
+                        <div class="date">Hochschule Bochum | 2004 - 2008 | Note: 1,6</div>
+                        <p>Vertiefungsrichtung: Systemtechnik. Praxissemester bei Bosch Automotive Products in China mit Fokus auf Prozessoptimierung.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- German Contact -->
+            <div id="contact-de" class="content-section contact-section fade-in-section">
+                <h2>📬 Kontakt</h2>
+                <p class="contact-intro">Haben Sie ein Projekt oder eine Frage? Ich freue mich auf Ihre Nachricht!</p>
+                <div class="contact-grid">
+                    <a href="mailto:mali.bayrak@web.de" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M22 6L12 13 2 6"/>
+                            </svg>
+                        </div>
+                        <h4>E-Mail</h4>
+                        <p>mali.bayrak@web.de</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/m-ali-bayrak-0a8036331/" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                            </svg>
+                        </div>
+                        <h4>LinkedIn</h4>
+                        <p>Vernetzen wir uns</p>
+                    </a>
+                    <a href="https://github.com/malibay81" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <h4>GitHub</h4>
+                        <p>Meine Projekte</p>
+                    </a>
+                    <a href="https://malibay81.github.io" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            </svg>
+                        </div>
+                        <h4>Portfolio</h4>
+                        <p>malibay81.github.io</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -150,207 +305,524 @@
         <section id="en" class="language-content">
             <div class="hero">
                 <div class="hero-text">
-                    <h1>Welcome to My Portfolio</h1>
-                    <p>Project Engineer & Software Developer in Special Machine Construction</p>
+                    <span class="hero-badge">Dipl.-Ing. (FH) M. Ali Bayrak</span>
+                    <h1>Project & Software Engineer</h1>
+                    <p>17+ years of experience developing custom test and measurement systems for automotive, electric motor, and pump industries at Vogelsang & Benning.</p>
+                    <a href="#contact-en" class="cta-button">
+                        <span>Get in Touch</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
-                <div class="hero-animation" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="150" cy="150" r="140" fill="rgba(255,255,255,0.1)"/>
-                        <rect x="80" y="100" width="140" height="100" rx="10" fill="white" opacity="0.2"/>
-                        <circle cx="120" cy="130" r="8" fill="white"/>
-                        <circle cx="180" cy="130" r="8" fill="white"/>
-                        <path d="M 120 160 Q 150 175 180 160" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                        <text x="150" y="240" font-size="40" text-anchor="middle" fill="white">💻</text>
+                <div class="hero-animation">
+                    <svg width="280" height="280" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a42f5;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="150" cy="150" r="130" fill="url(#grad2)" opacity="0.15"/>
+                        <circle cx="150" cy="150" r="100" fill="url(#grad2)" opacity="0.1"/>
+                        <rect x="85" y="95" width="130" height="90" rx="8" fill="none" stroke="url(#grad2)" stroke-width="3"/>
+                        <rect x="110" y="185" width="80" height="8" rx="4" fill="url(#grad2)" opacity="0.7"/>
+                        <text x="150" y="155" font-size="50" text-anchor="middle" fill="url(#grad2)">💻</text>
                     </svg>
                 </div>
             </div>
 
-            <div class="content-section hidden">
+            <div class="content-section fade-in-section">
                 <h2>About Me</h2>
-                <p>As an experienced project engineer and software developer with a passion for technology and precision, I bridge the gap between complex mechanical requirements and intelligent, robust software. With 18 years of professional experience, I have learned to master the entire product lifecycle – from the initial idea with the customer to long-term field support.</p>
+                <p>As an experienced project and software engineer focused on special machine construction and test stand technology, I bridge the gap between complex mechanical requirements and intelligent, robust software. With over 17 years of experience at <strong>Vogelsang & Benning</strong>, I have mastered the entire lifecycle of custom test systems – from initial customer inquiry through planning and conception to successful handover and long-term support.</p>
             </div>
 
-            <div class="content-section hidden">
+            <div class="content-section fade-in-section">
                 <h2>Professional Experience</h2>
-                <h3>Project Engineer & Software Developer in Special Machine Construction</h3>
-                <p>For 18 years, I have been involved in the design and development of custom test and inspection systems for the automotive, engine, and pump industries. My responsibilities range from technical planning in collaboration with the customer, through software architecture and development (C#, WPF, PLC), to commissioning and subsequent support. The focus of my work is the implementation of automated End-of-Line (EOL) test stands, complex R&D test fields, and mobile diagnostic systems, especially in the future field of electromobility and industrial drive technology.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Project & Software Engineer</h4>
+                        <div class="date">Vogelsang & Benning GmbH | 2008 - Present</div>
+                        <p>Project management and software development in special machine and test stand construction. Focus on developing individual solutions for automotive, electric motor, and pump industries.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Core Competencies</h4>
+                        <div class="date">Daily Practice</div>
+                        <ul class="competence-list">
+                            <li>🎯 <strong>Holistic Project Management:</strong> Responsibility from inquiry to handover</li>
+                            <li>🤝 <strong>Customer Support:</strong> Technical consulting and status reports</li>
+                            <li>📋 <strong>Requirements Management:</strong> Specifications and functional documents</li>
+                            <li>🚀 <strong>Commissioning:</strong> Setup, acceptance, and production start on-site</li>
+                            <li>🔧 <strong>Troubleshooting:</strong> Fast diagnosis of complex problems</li>
+                            <li>📚 <strong>Training:</strong> Customer personnel instruction</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Diploma Thesis</h4>
+                        <div class="date">Hochschule Bochum | 2008 | Grade: 1.0</div>
+                        <p>Integration of Data Translation multifunction module DT9836 into measurement and test software for electric motors.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="content-section hidden">
-                <h2>Skills</h2>
-                <ul class="skills-list">
-                    <li>C#</li>
-                    <li>WPF</li>
-                    <li>WinForms</li>
-                    <li>Blazor</li>
-                    <li>Siemens S7</li>
-                    <li>Beckhoff TwinCAT</li>
-                    <li>SQL (MS SQL, PostgreSQL, SQLite)</li>
-                    <li>Vector Informatik (CANoe, CANape)</li>
-                    <li>Jira</li>
-                    <li>.NET Interactive</li>
-                </ul>
-            </div>
-
-            <div class="content-section hidden">
-                <h2>Projects</h2>
-                 <div class="projects-grid">
+            <div class="content-section fade-in-section">
+                <h2>Industries & Test Systems</h2>
+                <div class="projects-grid">
                     <div class="project-card">
-                         <div class="project-icon" style="font-size: 60px;">🌐</div>
-                        <h3>All-in-One Gateway for Industrial Interfaces</h3>
-                        <p>Architecture and development of a central gateway to unify industrial communication protocols. This system acts as a bridge between various devices and systems such as PLC controllers, measurement acquisition hardware, and higher-level IT systems. It enables seamless data aggregation and distribution by connecting interfaces like REST, MQTT, SAP, and various fieldbuses.</p>
+                        <div class="project-icon">🔌</div>
+                        <h3>Drive Technology</h3>
+                        <p>Electric motor test stands for DC, AC, reluctance, and synchronous motors. EOL test systems for series production and high-precision R&D stands. Efficiency determination per EN 60034-2-1.</p>
                         <div class="project-tags">
-                            <span>C#</span>
-                            <span>.NET</span>
-                            <span>Architecture</span>
-                            <span>MQTT</span>
-                            <span>REST</span>
-                            <span>PLC</span>
-                            <span>SAP</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                         <div class="project-icon" style="font-size: 60px;">⚡</div>
-                        <h3>Software for E-Motor Test Stand</h3>
-                        <p>Development of a C#/WPF application for controlling and data acquisition of a performance test stand for electric motors. The software communicates via CAN bus with the test item and a PLC, visualizes measurement data in real-time, and generates a test report at the end.</p>
-                        <div class="project-tags">
-                            <span>C#</span>
-                            <span>WPF</span>
-                            <span>CAN-Bus</span>
-                            <span>PLC</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                         <div class="project-icon" style="font-size: 60px;">🔧</div>
-                        <h3>Automated Pump Test</h3>
-                        <p>Design and programming of a fully automatic EOL test stand for industrial pumps. My task was the PLC programming (Beckhoff TwinCAT) for controlling the actuators and the connection to a higher-level control system for managing test plans and results.</p>
-                         <div class="project-tags">
-                            <span>Beckhoff TwinCAT</span>
-                            <span>PLC</span>
                             <span>EOL</span>
+                            <span>R&D</span>
+                            <span>Efficiency</span>
                         </div>
                     </div>
                     <div class="project-card">
-                         <div class="project-icon" style="font-size: 60px;">📊</div>
-                        <h3>Enterprise Management System (EMS)</h3>
-                        <p>Conception, architecture, and implementation of an company-wide Enterprise Management System. This system integrates and optimizes the entire value chain through modules such as Document Management (DMS), Customer Relationship Management (CRM), Customer Service Management (CSM), and Product Lifecycle Management (PLM). It also includes functionalities for managing employee internships and internal processes, thereby representing a central platform for all business areas.</p>
+                        <div class="project-icon">🚗</div>
+                        <h3>Automotive</h3>
+                        <p>Test systems for electrical and electromechanical components: speed sensors, steering assist motors, rear axle steering. TISAX®-certified development environment.</p>
+                        <div class="project-tags">
+                            <span>Sensors</span>
+                            <span>TISAX®</span>
+                            <span>Endurance</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">⚡</div>
+                        <h3>E-Mobility</h3>
+                        <p>EOL test systems for starter-generator units (48V-300V), e-axles with/without power electronics, inverters, and hybrid drives.</p>
+                        <div class="project-tags">
+                            <span>E-Axles</span>
+                            <span>Inverter</span>
+                            <span>Hybrid</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">💧</div>
+                        <h3>Pump Testing</h3>
+                        <p>Test stands for centrifugal, displacement, vacuum, and submersible pumps. QH and NPSH curves, compressors, and blowers.</p>
+                        <div class="project-tags">
+                            <span>NPSH</span>
+                            <span>Curves</span>
+                            <span>Compressors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Software Architecture</h2>
+                <p class="section-intro">Design and development of modular software architectures as frameworks for test and automation solutions:</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">📚</div>
+                        <h3>Framework Libraries</h3>
+                        <p>Flexible, reusable function libraries for efficient extensibility and maintainability.</p>
                         <div class="project-tags">
                             <span>C#</span>
                             <span>.NET</span>
-                            <span>Blazor</span>
-                            <span>SQL</span>
-                            <span>DMS</span>
-                            <span>CRM</span>
-                            <span>CSM</span>
-                            <span>PLM</span>
+                            <span>Modular</span>
                         </div>
                     </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔐</div>
+                        <h3>User & Rights Management</h3>
+                        <p>Secure login and authorization concepts for different user roles with audit capability.</p>
+                        <div class="project-tags">
+                            <span>Auth</span>
+                            <span>RBAC</span>
+                            <span>Audit</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">📊</div>
+                        <h3>Statistics & Reporting</h3>
+                        <p>Automated reports for quality assurance, mathematical analysis, and graphical visualization of test results.</p>
+                        <div class="project-tags">
+                            <span>Charts</span>
+                            <span>Export</span>
+                            <span>QA</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔗</div>
+                        <h3>API & Interfaces</h3>
+                        <p>Integration of external systems (MES, ERP, SAP) via REST, OPC UA, MQTT. Sensor and automation component integration.</p>
+                        <div class="project-tags">
+                            <span>REST</span>
+                            <span>OPC UA</span>
+                            <span>MQTT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Technologies & Tools</h2>
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h4>💻 Programming</h4>
+                        <ul class="skills-list">
+                            <li>C# / .NET 4.8 / .NET 3-10</li>
+                            <li>WPF & WinForms</li>
+                            <li>Blazor (WebAssembly)</li>
+                            <li>HTML5 / Markdown</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🔧 Automation</h4>
+                        <ul class="skills-list">
+                            <li>Siemens S7 / TIA Portal</li>
+                            <li>Beckhoff TwinCAT 2/3</li>
+                            <li>Vector CANoe, CANape, CANalyzer</li>
+                            <li>.NET Interactive / Polyglot</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🗄️ Databases</h4>
+                        <ul class="skills-list">
+                            <li>Microsoft SQL Server</li>
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🛠️ DevTools</h4>
+                        <ul class="skills-list">
+                            <li>JetBrains Rider & ReSharper</li>
+                            <li>Visual Studio / VS Code</li>
+                            <li>Git, GitHub, GitLab</li>
+                            <li>MS-Test, NUnit, xUnit</li>
+                            <li>Jira</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Dipl.-Ing. (FH) Mechatronics</h4>
+                        <div class="date">Hochschule Bochum | 2004 - 2008 | Grade: 1.6</div>
+                        <p>Specialization: Systems Engineering. Internship at Bosch Automotive Products in China focusing on process optimization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English Contact -->
+            <div id="contact-en" class="content-section contact-section fade-in-section">
+                <h2>📬 Contact</h2>
+                <p class="contact-intro">Have a project or question? I'd love to hear from you!</p>
+                <div class="contact-grid">
+                    <a href="mailto:mali.bayrak@web.de" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M22 6L12 13 2 6"/>
+                            </svg>
+                        </div>
+                        <h4>Email</h4>
+                        <p>mali.bayrak@web.de</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/m-ali-bayrak-0a8036331/" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                            </svg>
+                        </div>
+                        <h4>LinkedIn</h4>
+                        <p>Let's connect</p>
+                    </a>
+                    <a href="https://github.com/malibay81" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <h4>GitHub</h4>
+                        <p>My projects</p>
+                    </a>
+                    <a href="https://malibay81.github.io" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            </svg>
+                        </div>
+                        <h4>Portfolio</h4>
+                        <p>malibay81.github.io</p>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Turkish Content -->
         <section id="tr" class="language-content" style="display:none;">
-             <div class="hero">
-                 <div class="hero-text">
-                    <h1>Portfolyoma Hoş Geldiniz</h1>
-                    <p>Özel Makine İmalatında Proje Mühendisi ve Yazılım Geliştirici</p>
+            <div class="hero">
+                <div class="hero-text">
+                    <span class="hero-badge">Dipl.-Ing. (FH) M. Ali Bayrak</span>
+                    <h1>Proje & Yazılım Mühendisi</h1>
+                    <p>Vogelsang & Benning'de otomotiv, elektrik motoru ve pompa endüstrileri için özel test ve ölçüm sistemleri geliştirmede 17+ yıl deneyim.</p>
+                    <a href="#contact-tr" class="cta-button">
+                        <span>İletişime Geç</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
-                <div class="hero-animation" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="150" cy="150" r="140" fill="rgba(255,255,255,0.1)"/>
-                        <rect x="80" y="100" width="140" height="100" rx="10" fill="white" opacity="0.2"/>
-                        <circle cx="120" cy="130" r="8" fill="white"/>
-                        <circle cx="180" cy="130" r="8" fill="white"/>
-                        <path d="M 120 160 Q 150 175 180 160" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                        <text x="150" y="240" font-size="40" text-anchor="middle" fill="white">💻</text>
+                <div class="hero-animation">
+                    <svg width="280" height="280" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8a42f5;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="150" cy="150" r="130" fill="url(#grad3)" opacity="0.15"/>
+                        <circle cx="150" cy="150" r="100" fill="url(#grad3)" opacity="0.1"/>
+                        <rect x="85" y="95" width="130" height="90" rx="8" fill="none" stroke="url(#grad3)" stroke-width="3"/>
+                        <rect x="110" y="185" width="80" height="8" rx="4" fill="url(#grad3)" opacity="0.7"/>
+                        <text x="150" y="155" font-size="50" text-anchor="middle" fill="url(#grad3)">🚀</text>
                     </svg>
                 </div>
             </div>
 
-            <div class="content-section hidden">
+            <div class="content-section fade-in-section">
                 <h2>Hakkımda</h2>
-                <p>Teknoloji ve hassasiyet tutkusu olan deneyimli bir proje mühendisi ve yazılım geliştiricisi olarak, karmaşık mekanik gereksinimler ile akıllı, sağlam yazılımlar arasında köprü kuruyorum. 18 yıllık mesleki deneyimimle, müşteriyle ilk fikirden sahadaki uzun vadeli desteğe kadar tüm ürün yaşam döngüsünü yönetmeyi öğrendim.</p>
+                <p>Özel makine yapımı ve test standı teknolojisine odaklanan deneyimli bir proje ve yazılım mühendisi olarak, karmaşık mekanik gereksinimler ile akıllı, sağlam yazılımlar arasında köprü kuruyorum. <strong>Vogelsang & Benning</strong>'de 17 yılı aşkın deneyimimle, ilk müşteri talebinden planlama ve konsepte, başarılı teslimata ve uzun vadeli desteğe kadar özel test sistemlerinin tüm yaşam döngüsünde uzmanlaştım.</p>
             </div>
 
-            <div class="content-section hidden">
+            <div class="content-section fade-in-section">
                 <h2>Mesleki Deneyim</h2>
-                <h3>Özel Makine İmalatında Proje Mühendisi ve Yazılım Geliştirici</h3>
-                <p>18 yıldır otomotiv, motor ve pompa endüstrileri için özel test ve denetim sistemlerinin tasarımı ve geliştirilmesinde yer almaktayım. Sorumluluklarım, müşteriyle işbirliği içinde teknik planlamadan, yazılım mimarisi ve geliştirmeye (C#, WPF, PLC), devreye almaya ve sonraki desteğe kadar uzanmaktadır. Çalışmalarımın odak noktası, özellikle elektromobilite ve endüstriyel tahrik teknolojisinin gelecekteki alanında otomatikleştirilmiş Hat Sonu (EOL) test standlarının, karmaşık Ar-Ge test alanlarının ve mobil teşhis sistemlerinin uygulanmasıdır.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Proje & Yazılım Mühendisi</h4>
+                        <div class="date">Vogelsang & Benning GmbH | 2008 - Günümüz</div>
+                        <p>Özel makine ve test standı yapımında proje yönetimi ve yazılım geliştirme. Otomotiv, elektrik motoru ve pompa endüstrileri için bireysel çözümler geliştirmeye odaklanma.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Temel Yetkinlikler</h4>
+                        <div class="date">Günlük Uygulama</div>
+                        <ul class="competence-list">
+                            <li>🎯 <strong>Bütünsel Proje Yönetimi:</strong> Talepten teslimata sorumluluk</li>
+                            <li>🤝 <strong>Müşteri Desteği:</strong> Teknik danışmanlık ve durum raporları</li>
+                            <li>📋 <strong>Gereksinim Yönetimi:</strong> Şartnameler ve fonksiyonel belgeler</li>
+                            <li>🚀 <strong>Devreye Alma:</strong> Kurulum, kabul ve üretim başlangıcı</li>
+                            <li>🔧 <strong>Sorun Giderme:</strong> Karmaşık sorunların hızlı teşhisi</li>
+                            <li>📚 <strong>Eğitim:</strong> Müşteri personeli eğitimi</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Diploma Tezi</h4>
+                        <div class="date">Hochschule Bochum | 2008 | Not: 1,0</div>
+                        <p>Data Translation çok fonksiyonlu modül DT9836'nın elektrik motorları için ölçüm ve test yazılımına entegrasyonu.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="content-section hidden">
-                <h2>Yetenekler</h2>
-                <ul class="skills-list">
-                    <li>C#</li>
-                    <li>WPF</li>
-                    <li>WinForms</li>
-                    <li>Blazor</li>
-                    <li>Siemens S7</li>
-                    <li>Beckhoff TwinCAT</li>
-                    <li>SQL (MS SQL, PostgreSQL, SQLite)</li>
-                    <li>Vector Informatik (CANoe, CANape)</li>
-                    <li>Jira</li>
-                    <li>.NET Interactive</li>
-                </ul>
-            </div>
-
-            <div class="content-section hidden">
-                <h2>Projeler</h2>
-                 <div class="projects-grid">
+            <div class="content-section fade-in-section">
+                <h2>Sektörler & Test Sistemleri</h2>
+                <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-icon" style="font-size: 60px;">🌐</div>
-                        <p>Endüstriyel iletişim protokollerini birleştirmek için merkezi bir ağ geçidinin mimarisi ve geliştirilmesi. Bu sistem, PLC kontrolörleri, ölçüm toplama donanımı ve üst düzey IT sistemleri gibi çeşitli cihazlar ve sistemler arasında bir köprü görevi görür. REST, MQTT, SAP ve çeşitli fieldbus gibi arayüzleri bağlayarak sorunsuz veri toplama ve dağıtımı sağlar.</p>
+                        <div class="project-icon">🔌</div>
+                        <h3>Tahrik Teknolojisi</h3>
+                        <p>DC, AC, relüktans ve senkron motorlar için elektrik motoru test standları. Seri üretim için EOL test sistemleri ve yüksek hassasiyetli Ar-Ge standları. EN 60034-2-1'e göre verimlilik belirleme.</p>
                         <div class="project-tags">
-                            <span>C#</span>
-                            <span>.NET</span>
-                            <span>Mimari</span>
-                            <span>MQTT</span>
-                            <span>REST</span>
-                            <span>PLC</span>
-                            <span>SAP</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-icon" style="font-size: 60px;">⚡</div>
-                        <p>Elektrik motorları için bir performans test standının kontrolü ve veri toplanması için bir C#/WPF uygulamasının geliştirilmesi. Yazılım, test edilen ürün ve bir PLC ile CAN bus üzerinden iletişim kurar, ölçüm verilerini gerçek zamanlı olarak görselleştirir ve sonunda bir test raporu oluşturur.</p>
-                        <div class="project-tags">
-                            <span>C#</span>
-                            <span>WPF</span>
-                            <span>CAN-Bus</span>
-                            <span>PLC</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-icon">
-                        <div class="project-icon" style="font-size: 60px;">🔧</div>
-                        <p>Endüstriyel pompalar için tam otomatik bir EOL test standının tasarımı ve programlanması. Görevim, aktüatörleri kontrol etmek için PLC programlaması (Beckhoff TwinCAT) ve test planlarını ve sonuçlarını yönetmek için üst düzey bir kontrol sistemine bağlantıydı.</p>
-                         <div class="project-tags">
-                            <span>Beckhoff TwinCAT</span>
-                            <span>PLC</span>
                             <span>EOL</span>
+                            <span>Ar-Ge</span>
+                            <span>Verimlilik</span>
                         </div>
                     </div>
                     <div class="project-card">
-                        <div class="project-icon">
-                        <div class="project-icon" style="font-size: 60px;">📊</div>
-                        <p>Şirket çapında bir Kurumsal Yönetim Sisteminin (Enterprise Management System) konsepti, mimarisi ve uygulanması. Bu sistem, Belge Yönetimi (DMS), Müşteri İlişkileri Yönetimi (CRM), Müşteri Hizmetleri Yönetimi (CSM) ve Ürün Yaşam Döngüsü Yönetimi (PLM) gibi modüller aracılığıyla tüm değer zincirini entegre eder ve optimize eder. Ayrıca, çalışan stajlarını ve dahili süreçleri yönetmek için işlevsellikler içerir ve böylece tüm iş alanları için merkezi bir platform temsil eder.</p>
+                        <div class="project-icon">🚗</div>
+                        <h3>Otomotiv</h3>
+                        <p>Elektriksel ve elektromekanik bileşenler için test sistemleri: hız sensörleri, direksiyon destek motorları, arka aks direksiyonu. TISAX® sertifikalı geliştirme ortamı.</p>
                         <div class="project-tags">
-                            <span>C#</span>
-                            <span>.NET</span>
-                            <span>Mimari</span>
-                            <span>SQL</span>
-                            <span>Blazor</span>
-                            <span>DMS</span>
-                            <span>CRM</span>
-                            <span>CSM</span>
-                            <span>PLM</span>
+                            <span>Sensörler</span>
+                            <span>TISAX®</span>
+                            <span>Dayanıklılık</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">⚡</div>
+                        <h3>E-Mobilite</h3>
+                        <p>Marş-jeneratör üniteleri (48V-300V), güç elektroniği ile/olmadan e-akslar, invertörler ve hibrit tahrikler için EOL test sistemleri.</p>
+                        <div class="project-tags">
+                            <span>E-Akslar</span>
+                            <span>İnvertör</span>
+                            <span>Hibrit</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">💧</div>
+                        <h3>Pompa Test Tekniği</h3>
+                        <p>Santrifüj, pozitif deplasmanl, vakum ve dalgıç pompalar için test standları. QH ve NPSH eğrileri, kompresörler ve fanlar.</p>
+                        <div class="project-tags">
+                            <span>NPSH</span>
+                            <span>Eğriler</span>
+                            <span>Kompresörler</span>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Yazılım Mimarisi</h2>
+                <p class="section-intro">Test ve otomasyon çözümleri için çerçeve olarak modüler yazılım mimarilerinin tasarımı ve geliştirilmesi:</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">📚</div>
+                        <h3>Framework Kütüphaneleri</h3>
+                        <p>Verimli genişletilebilirlik ve bakım kolaylığı için esnek, yeniden kullanılabilir fonksiyon kütüphaneleri.</p>
+                        <div class="project-tags">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>Modüler</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔐</div>
+                        <h3>Kullanıcı & Yetki Yönetimi</h3>
+                        <p>Denetim yeteneği ile farklı kullanıcı rolleri için güvenli giriş ve yetkilendirme konseptleri.</p>
+                        <div class="project-tags">
+                            <span>Auth</span>
+                            <span>RBAC</span>
+                            <span>Denetim</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">📊</div>
+                        <h3>İstatistik & Raporlama</h3>
+                        <p>Kalite güvencesi için otomatik raporlar, matematiksel analiz ve test sonuçlarının grafiksel görselleştirmesi.</p>
+                        <div class="project-tags">
+                            <span>Grafikler</span>
+                            <span>Dışa Aktarma</span>
+                            <span>KG</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">🔗</div>
+                        <h3>API & Arayüzler</h3>
+                        <p>REST, OPC UA, MQTT üzerinden harici sistemlerin (MES, ERP, SAP) entegrasyonu. Sensör ve otomasyon bileşeni entegrasyonu.</p>
+                        <div class="project-tags">
+                            <span>REST</span>
+                            <span>OPC UA</span>
+                            <span>MQTT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Teknolojiler & Araçlar</h2>
+                <div class="skills-categories">
+                    <div class="skill-category">
+                        <h4>💻 Programlama</h4>
+                        <ul class="skills-list">
+                            <li>C# / .NET 4.8 / .NET 3-10</li>
+                            <li>WPF & WinForms</li>
+                            <li>Blazor (WebAssembly)</li>
+                            <li>HTML5 / Markdown</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🔧 Otomasyon</h4>
+                        <ul class="skills-list">
+                            <li>Siemens S7 / TIA Portal</li>
+                            <li>Beckhoff TwinCAT 2/3</li>
+                            <li>Vector CANoe, CANape, CANalyzer</li>
+                            <li>.NET Interactive / Polyglot</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🗄️ Veritabanları</h4>
+                        <ul class="skills-list">
+                            <li>Microsoft SQL Server</li>
+                            <li>PostgreSQL</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🛠️ Geliştirme Araçları</h4>
+                        <ul class="skills-list">
+                            <li>JetBrains Rider & ReSharper</li>
+                            <li>Visual Studio / VS Code</li>
+                            <li>Git, GitHub, GitLab</li>
+                            <li>MS-Test, NUnit, xUnit</li>
+                            <li>Jira</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section fade-in-section">
+                <h2>Eğitim</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Dipl.-Ing. (FH) Mekatronik</h4>
+                        <div class="date">Hochschule Bochum | 2004 - 2008 | Not: 1,6</div>
+                        <p>Uzmanlık: Sistem Mühendisliği. Çin'de Bosch Automotive Products'ta süreç optimizasyonuna odaklanan staj.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Turkish Contact -->
+            <div id="contact-tr" class="content-section contact-section fade-in-section">
+                <h2>📬 İletişim</h2>
+                <p class="contact-intro">Bir projeniz veya sorunuz mu var? Sizden haber almak isterim!</p>
+                <div class="contact-grid">
+                    <a href="mailto:mali.bayrak@web.de" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M22 6L12 13 2 6"/>
+                            </svg>
+                        </div>
+                        <h4>E-Posta</h4>
+                        <p>mali.bayrak@web.de</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/m-ali-bayrak-0a8036331/" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                            </svg>
+                        </div>
+                        <h4>LinkedIn</h4>
+                        <p>Bağlantı kuralım</p>
+                    </a>
+                    <a href="https://github.com/malibay81" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <h4>GitHub</h4>
+                        <p>Projelerim</p>
+                    </a>
+                    <a href="https://malibay81.github.io" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            </svg>
+                        </div>
+                        <h4>Portfolyo</h4>
+                        <p>malibay81.github.io</p>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 M. Ali Bayrak | Portfolio</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
