@@ -130,8 +130,21 @@ function typeWriter(element, text, speed = 50) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio initializing...');
     
-    // Show English by default
-    showLanguage('en');
+    // Check URL parameter for language (e.g., ?lang=de, ?lang=en, ?lang=tr)
+    // Also check hash fragment (e.g., #de, #en, #tr)
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    const hashLang = window.location.hash.replace('#', '');
+    const validLanguages = ['de', 'en', 'tr'];
+    
+    // Priority: URL parameter > hash fragment > default (German)
+    let initialLanguage = 'de';
+    if (validLanguages.includes(langParam)) {
+        initialLanguage = langParam;
+    } else if (validLanguages.includes(hashLang)) {
+        initialLanguage = hashLang;
+    }
+    showLanguage(initialLanguage);
 
     // Restore theme preference from localStorage
     try {
