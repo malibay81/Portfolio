@@ -1,0 +1,384 @@
+/* ============================================================
+   Portfolio_H1 — Global Styles
+   Deep Space Dark Theme + Glassmorphism
+   ============================================================ */
+
+/* -- Google Font Import (fallback, already in index.html) -- */
+:root {
+    /* Color Palette */
+    --color-primary:       #6C63FF;
+    --color-primary-glow:  rgba(108, 99, 255, 0.35);
+    --color-secondary:     #03DAC6;
+    --color-accent:        #FF6B9D;
+
+    /* Dark Background Layers */
+    --bg-base:             #0D0D1A;
+    --bg-surface:          #1A1A2E;
+    --bg-elevated:         #22223A;
+
+    /* Text */
+    --text-primary:        #E8E8FF;
+    --text-secondary:      #9090BB;
+    --text-muted:          #5A5A8A;
+
+    /* Glass Effect */
+    --glass-bg:            rgba(26, 26, 46, 0.65);
+    --glass-border:        rgba(108, 99, 255, 0.18);
+    --glass-blur:          16px;
+
+    /* Gradients */
+    --gradient-hero:       linear-gradient(135deg, #0D0D1A 0%, #1A0A2E 50%, #0D1A2E 100%);
+    --gradient-primary:    linear-gradient(135deg, #6C63FF 0%, #9B59B6 100%);
+    --gradient-card:       linear-gradient(145deg, rgba(26,26,46,0.9) 0%, rgba(13,13,26,0.95) 100%);
+
+    /* Spacing & Radius */
+    --radius-sm:           8px;
+    --radius-md:           16px;
+    --radius-lg:           24px;
+    --radius-xl:           32px;
+
+    /* Shadows */
+    --shadow-sm:           0 2px 12px rgba(0,0,0,0.3);
+    --shadow-md:           0 8px 32px rgba(0,0,0,0.4);
+    --shadow-glow:         0 0 32px var(--color-primary-glow);
+
+    /* Transitions */
+    --transition-fast:     0.15s ease;
+    --transition-med:      0.3s ease;
+    --transition-slow:     0.5s ease;
+}
+
+/* -- Reset & Base ------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* -- Scrollbar --------------------------------------------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-secondary); }
+
+/* -- Selection --------------------------------------------- */
+::selection {
+    background: var(--color-primary-glow);
+    color: var(--text-primary);
+}
+
+/* -- Splash Screen ----------------------------------------- */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--gradient-hero);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.splash-logo {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+.splash-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.splash-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    animation: splash-bounce 1.2s ease-in-out infinite;
+}
+
+.splash-dots span:nth-child(2) { animation-delay: 0.2s; }
+.splash-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes splash-bounce {
+    0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+    40%           { transform: scale(1.2); opacity: 1.0; }
+}
+
+/* -- Glassmorphism Card ------------------------------------ */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow), var(--shadow-md);
+}
+
+/* -- Gradient Text ----------------------------------------- */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* -- Section Layout ---------------------------------------- */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    margin: 16px auto 0;
+}
+
+/* -- Hero Section ------------------------------------------ */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(108,99,255,0.12) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(3,218,198,0.08) 0%, transparent 70%);
+    bottom: -80px;
+    left: -80px;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-greeting {
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    animation: fade-up 0.6s ease both;
+}
+
+.hero-name {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 16px;
+    animation: fade-up 0.7s ease both;
+}
+
+.hero-title {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 24px;
+    animation: fade-up 0.8s ease both;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    animation: fade-up 0.9s ease both;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fade-up 1s ease both;
+}
+
+/* -- Skill Chips ------------------------------------------- */
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(8px);
+}
+
+.skill-chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* -- Contact Links ---------------------------------------- */
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all var(--transition-med);
+    backdrop-filter: blur(8px);
+}
+
+.contact-link:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-glow);
+    transform: translateX(4px);
+    color: var(--color-primary);
+}
+
+/* -- Animations -------------------------------------------- */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 16px var(--color-primary-glow); }
+    50%       { box-shadow: 0 0 32px var(--color-primary-glow), 0 0 64px var(--color-primary-glow); }
+}
+
+/* -- Available Badge --------------------------------------- */
+.available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(3, 218, 198, 0.1);
+    border: 1px solid rgba(3, 218, 198, 0.3);
+    color: var(--color-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.available-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* -- Blazor Error UI --------------------------------------- */
+#blazor-error-ui {
+    display: none;
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e53935;
+    color: white;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    z-index: 10000;
+    box-shadow: var(--shadow-md);
+}
+
+#blazor-error-ui .reload { color: white; font-weight: 600; }
+#blazor-error-ui .dismiss { cursor: pointer; margin-left: 16px; }
+
+/* -- Project Cards ----------------------------------------- */
+.project-card {
+    transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    border: 1px solid var(--glass-border);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow), var(--shadow-md);
+    border-color: rgba(108,99,255,0.4);
+}
+
+.project-card--highlighted {
+    border-color: rgba(108,99,255,0.35);
+    box-shadow: 0 0 0 1px rgba(108,99,255,0.2), var(--shadow-md);
+}
+
+.project-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--color-primary-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(108,99,255,0.25);
+}
+
+/* -- Responsive Helpers ------------------------------------ */
+@media (max-width: 600px) {
+    .section { padding: 48px 0; }
+    .hero-cta { flex-direction: column; }
+}
