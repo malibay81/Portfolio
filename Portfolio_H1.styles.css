@@ -1,3 +1,29 @@
+/* /Components/TypewriterText.razor.rz.scp.css */
+.typewriter-container[b-ns54o2ujbi] {
+    display: inline-flex;
+    align-items: center;
+}
+
+.typewriter-text[b-ns54o2ujbi] {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.typewriter-cursor[b-ns54o2ujbi] {
+    margin-left: 2px;
+    animation: blink-b-ns54o2ujbi 1s step-end infinite;
+    font-weight: bold;
+    color: var(--mud-palette-primary);
+}
+
+@keyframes blink-b-ns54o2ujbi {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-zmk6m2k43z] {
     position: relative;
