@@ -5,28 +5,28 @@
 
 /* -- Google Font Import (fallback, already in index.html) -- */
 :root {
-    /* Color Palette */
+    /* Color Palette (common) */
     --color-primary:       #6C63FF;
     --color-primary-glow:  rgba(108, 99, 255, 0.35);
     --color-secondary:     #03DAC6;
     --color-accent:        #FF6B9D;
 
-    /* Dark Background Layers */
+    /* Dark Background Layers (default) */
     --bg-base:             #0D0D1A;
     --bg-surface:          #1A1A2E;
     --bg-elevated:         #22223A;
 
-    /* Text */
+    /* Text (default dark) */
     --text-primary:        #E8E8FF;
     --text-secondary:      #9090BB;
     --text-muted:          #5A5A8A;
 
-    /* Glass Effect */
+    /* Glass Effect (dark) */
     --glass-bg:            rgba(26, 26, 46, 0.65);
     --glass-border:        rgba(108, 99, 255, 0.18);
     --glass-blur:          16px;
 
-    /* Gradients */
+    /* Gradients (dark) */
     --gradient-hero:       linear-gradient(135deg, #0D0D1A 0%, #1A0A2E 50%, #0D1A2E 100%);
     --gradient-primary:    linear-gradient(135deg, #6C63FF 0%, #9B59B6 100%);
     --gradient-card:       linear-gradient(145deg, rgba(26,26,46,0.9) 0%, rgba(13,13,26,0.95) 100%);
@@ -37,7 +37,7 @@
     --radius-lg:           24px;
     --radius-xl:           32px;
 
-    /* Shadows */
+    /* Shadows (dark) */
     --shadow-sm:           0 2px 12px rgba(0,0,0,0.3);
     --shadow-md:           0 8px 32px rgba(0,0,0,0.4);
     --shadow-glow:         0 0 32px var(--color-primary-glow);
@@ -46,6 +46,32 @@
     --transition-fast:     0.15s ease;
     --transition-med:      0.3s ease;
     --transition-slow:     0.5s ease;
+}
+
+/* -- Light Mode Theme Overrides -- */
+.light-theme {
+    /* Light Background Layers */
+    --bg-base:             #F5F5F7;
+    --bg-surface:          #FFFFFF;
+    --bg-elevated:         #F0F0F5;
+
+    /* Text (light) */
+    --text-primary:        #1A1A2E;
+    --text-secondary:      #555577;
+    --text-muted:          #999AAA;
+
+    /* Glass Effect (light) */
+    --glass-bg:            rgba(255, 255, 255, 0.75);
+    --glass-border:        rgba(108, 99, 255, 0.15);
+
+    /* Gradients (light) */
+    --gradient-hero:       linear-gradient(135deg, #F5F5F7 0%, #FAFBFF 50%, #F0F3FF 100%);
+    --gradient-card:       linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(245,245,247,0.9) 100%);
+
+    /* Shadows (light) */
+    --shadow-sm:           0 2px 12px rgba(0,0,0,0.08);
+    --shadow-md:           0 8px 32px rgba(0,0,0,0.12);
+    --shadow-glow:         0 0 32px rgba(108,99,255,0.2);
 }
 
 /* -- Reset & Base ------------------------------------------- */
