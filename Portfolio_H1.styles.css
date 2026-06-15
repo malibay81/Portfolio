@@ -7,13 +7,16 @@
 .typewriter-text[b-ns54o2ujbi] {
     white-space: pre-wrap;
     word-break: break-word;
+    color: var(--color-secondary);
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .typewriter-cursor[b-ns54o2ujbi] {
     margin-left: 2px;
     animation: blink-b-ns54o2ujbi 1s step-end infinite;
     font-weight: bold;
-    color: var(--mud-palette-primary);
+    color: var(--color-secondary);
 }
 
 @keyframes blink-b-ns54o2ujbi {
