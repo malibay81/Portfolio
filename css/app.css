@@ -252,10 +252,16 @@ body {
 
 .hero-title {
     font-size: clamp(1rem, 2.5vw, 1.4rem);
-    color: var(--color-secondary);
-    font-weight: 600;
+    color: var(--text-secondary);
+    font-weight: 400;
     margin-bottom: 24px;
     animation: fade-up 0.8s ease both;
+}
+
+/* Typewriter text color override */
+.hero-title .typewriter-text,
+.hero-title .typewriter-cursor {
+    color: var(--color-secondary);
 }
 
 .hero-subtitle {
