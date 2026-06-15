@@ -252,8 +252,8 @@ body {
 
 .hero-title {
     font-size: clamp(1rem, 2.5vw, 1.4rem);
-    color: var(--text-secondary);
-    font-weight: 400;
+    color: var(--color-secondary);
+    font-weight: 600;
     margin-bottom: 24px;
     animation: fade-up 0.8s ease both;
 }
